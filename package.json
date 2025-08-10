@@ -1,0 +1,30 @@
+{
+  "name": "aifw",
+  "version": "1.0.0",
+  "description": "AI Framework - LLM-first development framework for any AI platform",
+  "bin": {
+    "aifw": "./bin/aifw"
+  },
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "claude-code",
+    "framework",
+    "development",
+    "automation"
+  ],
+  "author": "jubalm",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jubalm/aifw.git"
+  },
+  "homepage": "https://github.com/jubalm/aifw#readme"
+}

@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+const path = require('path');
+const { init } = require('../lib/init.js');
+
+const args = process.argv.slice(2);
+const command = args[0];
+
+async function main() {
+  try {
+    switch (command) {
+      case 'init':
+        const claudeCodeFlag = args.includes('--claude-code');
+        await init(claudeCodeFlag);
+        break;
+      case '--version':
+      case '-v':
+        const pkg = require('../package.json');
+        console.log(`AIFW v${pkg.version}`);
+        break;
+      case '--help':
+      case '-h':
+      case undefined:
+        showHelp();
+        break;
+      default:
+        console.error(`Unknown command: ${command}`);
+        showHelp();
+        process.exit(1);
+    }
+  } catch (error) {
+    console.error('Error:', error.message);
+    process.exit(1);
+  }
+}
+
+function showHelp() {
+  console.log(`
+AIFW - AI Framework
+
+Usage:
+  npx jubalm/aifw init                 Initialize framework (interactive)
+  npx jubalm/aifw init --claude-code   Initialize for Claude Code
+  npx jubalm/aifw --version           Show version
+  npx jubalm/aifw --help              Show this help
+
+The AI Framework sets up LLM-optimized project context and platform-specific agents.
+`);
+}
+
+main().catch(console.error);
