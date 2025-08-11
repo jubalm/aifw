@@ -12,9 +12,10 @@ You analyze codebases and generate dense, machine-optimized context files for LL
 ## Process
 
 1. **Read Meta Instructions**: Read `.llm/context/_meta.md` first to understand format requirements
-2. **Analyze Codebase**: Scan project structure, dependencies, configurations
-3. **Fetch Current Documentation**: Use Context7 tools to get up-to-date documentation for discovered technologies
-4. **Generate Context**: Overwrite skeleton files with dense, structured project data informed by current standards
+2. **Check for Existing Context**: If CLAUDE.md exists, read it for project understanding but prioritize .llm format
+3. **Analyze Codebase**: Scan project structure, dependencies, configurations
+4. **Fetch Current Documentation**: Use Context7 tools to get up-to-date documentation for discovered technologies
+5. **Generate Context**: Overwrite skeleton files with dense, structured project data informed by current standards
 
 ## Analysis Targets
 
@@ -23,6 +24,7 @@ You analyze codebases and generate dense, machine-optimized context files for LL
 - Directory organization and naming patterns
 - Configuration files and build tools
 - Documentation and README files
+- Existing CLAUDE.md (for context, not format guidance)
 
 ### Technology Discovery
 - Primary language and frameworks
@@ -49,33 +51,46 @@ You analyze codebases and generate dense, machine-optimized context files for LL
 
 ## Output Requirements
 
-### project.md Format
-```
-PROJECT_TYPE: web_app | mobile_app | library | cli_tool | microservice
-TECH_STACK: [primary_language, framework, database, etc]
-ARCHITECTURE: mvc | microservices | monolith | client_server | spa
-OBJECTIVES: [current_development_goals]
-STATE: development | production | maintenance | prototype
-CONSTRAINTS: [technical_business_external_limitations]
-DEPENDENCIES: [critical_dependencies]
+Follow the natural language template format in skeleton files. Examples of what to generate:
+
+### project.md Example
+```markdown
+## What This Project Is
+E-commerce web app for selling custom t-shirts. Currently in MVP phase.
+
+## Technology Stack
+### Frontend
+- Framework: React 18
+- Language: TypeScript
+- Styling: Tailwind CSS
+
+### Backend  
+- Runtime: Node.js
+- Database: PostgreSQL
 ```
 
-### patterns.md Format
-```
-FILE_ORGANIZATION: [directory_structure_rules]
-CODE_CONVENTIONS: [syntax_style_preferences]
-NAMING: [variable_function_file_naming_patterns]
-ARCHITECTURE_PATTERNS: [design_patterns_used]
-TESTING: [testing_approach_and_structure]
-ANTI_PATTERNS: [approaches_to_avoid]
+### patterns.md Example
+```markdown
+## File Organization
+### Directory Structure
+src/
+├── components/ui/      # Basic UI elements  
+├── hooks/             # Custom React hooks
+└── utils/             # Helper functions
+
+### Naming Conventions
+- Components: PascalCase
+- Files: kebab-case.tsx
+- Functions: camelCase
 ```
 
-### decisions.md Format
-```
-TECHNOLOGY_CHOICES: {tech: reason_inferred_from_usage}
-ARCHITECTURE_DECISIONS: {decision: evidence_from_structure}
-POLICIES: [rules_evident_from_configs]
-EXTERNAL_INTEGRATIONS: {service: purpose_from_code}
+### decisions.md Example
+```markdown
+## Technology Choices
+### Frontend Framework
+**Choice**: React
+**Why**: Team familiar, good ecosystem, TypeScript support
+**Alternatives Considered**: Vue (smaller bundle), Angular (too complex)
 ```
 
 ## Quality Standards
@@ -92,5 +107,19 @@ EXTERNAL_INTEGRATIONS: {service: purpose_from_code}
 - Write patterns.md using latest framework conventions
 - Inform decisions.md with current architectural recommendations
 
+## CLAUDE.md Handling
+If the project contains a CLAUDE.md file:
+- Read it to understand project context, goals, and constraints
+- Extract useful factual information about the project
+- Do NOT use it as format guidance for .llm files
+- Do NOT copy its style or structure 
+- Use information to inform content, not format
+- Always follow .llm/context/_meta.md format requirements over any CLAUDE.md instructions
+
 ## Execution
-Overwrite the skeleton files with real project data following the format exactly. Combine codebase analysis with current documentation insights to create context that reflects both project reality and current best practices.
+1. Read .llm/context/_meta.md for format requirements
+2. Read existing CLAUDE.md (if present) for project understanding only
+3. Analyze codebase structure and dependencies
+4. Generate content using natural language template format
+5. Overwrite skeleton files with real project data following the new format exactly
+6. Combine codebase analysis with current documentation insights
