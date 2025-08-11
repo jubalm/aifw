@@ -49,7 +49,7 @@ After running `npx jubalm/aifw init --claude-code`:
 
 2. **Generate project context**:
    ```
-   @llm-generator analyze this project and generate context
+   @context-builder analyze this project and generate context
    ```
 
 3. **Create specialized agents**:

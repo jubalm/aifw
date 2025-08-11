@@ -18,7 +18,7 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 
 ### 1. Context Generation
 ```
-@llm-generator analyze this project and generate context
+@context-builder analyze this project and generate context
 ```
 Analyzes your codebase and creates LLM-optimized context files in `context/`:
 - `project.md` - Dense project facts and constraints
@@ -42,15 +42,19 @@ Use the generated agents for any development task. They have perfect project kno
 ```
 .llm/
 ├── README.md              # This file
-└── context/
-    ├── _meta.md           # LLM instructions for context format
+├── templates/             # IMMUTABLE reference templates
+│   ├── _meta.md          # LLM instructions for context format
+│   ├── project.md        # Project template  
+│   ├── patterns.md       # Patterns template
+│   └── decisions.md      # Decisions template
+└── context/               # Generated context files
     ├── project.md         # Project facts and constraints
     ├── patterns.md        # Code conventions and patterns
     └── decisions.md       # Technology choices and policies
 
 .claude/
 └── agents/
-    ├── llm-generator.md   # Context generation agent
+    ├── context-builder.md # Context generation agent
     ├── agent-builder.md   # Specialist creation agent
     └── [generated agents] # Project-specific specialists
 ```
