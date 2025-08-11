@@ -17,8 +17,8 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 ## How It Works
 
 ### 1. Context Generation
-```bash
-claude --agent llm-generator "Generate project context"
+```
+@llm-generator analyze this project and generate context
 ```
 Analyzes your codebase and creates LLM-optimized context files in `context/`:
 - `project.md` - Dense project facts and constraints
@@ -26,8 +26,8 @@ Analyzes your codebase and creates LLM-optimized context files in `context/`:
 - `decisions.md` - Technology choices validated against current standards
 
 ### 2. Agent Creation
-```bash
-claude --agent agent-builder "Create specialized agents"
+```
+@agent-builder create specialized agents for this project
 ```
 Reads the context files and generates project-specific agents:
 - Development specialists (frontend, backend, API)

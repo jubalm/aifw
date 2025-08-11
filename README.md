@@ -48,13 +48,13 @@ After running `npx jubalm/aifw init --claude-code`:
    ```
 
 2. **Generate project context**:
-   ```bash
-   claude --agent llm-generator "Generate project context"
+   ```
+   @llm-generator analyze this project and generate context
    ```
 
 3. **Create specialized agents**:
-   ```bash
-   claude --agent agent-builder "Create specialized agents"
+   ```
+   @agent-builder create specialized agents for this project
    ```
 
 ## Framework Structure
