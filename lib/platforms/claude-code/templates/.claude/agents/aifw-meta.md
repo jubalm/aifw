@@ -42,7 +42,7 @@ Based on your [project-type] project, execute these @aifw-context-builder comman
 - @aifw-context-builder assignment: Generate decisions.md (infer from [specific-sources])
 
 After all context files complete, then run:
-- @aifw-context-builder assignment: Update CLAUDE.md (integrate all context with preserved workflow content)
+- @aifw-context-builder assignment: Update CLAUDE.md
 ```
 
 ### When Asked About Agent Building
@@ -99,7 +99,7 @@ Your Response:
 - @aifw-context-builder assignment: Generate decisions.md (infer Next.js vs alternatives, TypeScript adoption, Prisma ORM choice, deployment strategy)
 
 After all three complete successfully, then run:
-- @aifw-context-builder assignment: Update CLAUDE.md
+- @aifw-context-builder assignment: Update CLAUDE.md (use ONLY @.llm/context/ file imports - no content duplication)
 
 This will create comprehensive project context optimized for AI consumption."
 ```

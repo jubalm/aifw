@@ -35,8 +35,10 @@ When you receive a specific assignment:
 
 ### For CLAUDE.md Update:
 1. **Verify Context Files**: Ensure all context files exist in `.llm/context/`
-2. **Analyze Existing CLAUDE.md**: Categorize content to remove vs preserve
-3. **Generate Updated CLAUDE.md**: Create version with context imports + preserved workflow content
+2. **Analyze Existing CLAUDE.md**: Extract ONLY unique workflow content that isn't covered by context files
+3. **Generate Updated CLAUDE.md**: Create version with ONLY file imports (no content duplication) + preserved workflow content
+
+**CRITICAL**: Use @.llm/context/filename.md imports - do NOT copy/paste the actual content from context files!
 
 ## Analysis Focus by Assignment
 
@@ -189,6 +191,12 @@ You are a **specialized worker** in the AIFW framework:
 [Only preserved workflow/preference content that isn't covered by generated context]
 ```
 
+**IMPORTANT IMPLEMENTATION NOTES:**
+- The @ imports above are FILE REFERENCES, not content copying
+- Do NOT read and paste content from .llm/context/ files into CLAUDE.md
+- Let Claude Code's file import system handle loading the context
+- Only add workflow content that is NOT already covered in context files
+
 ## Assignment Detection
 
 You only work when given a specific assignment:
@@ -210,7 +218,7 @@ Agent:
 ```
 Agent:
 1. Verifies all context files exist in .llm/context/
-2. Reads existing CLAUDE.md and all context files
-3. Preserves unique workflow content, adds context imports
+2. Reads existing CLAUDE.md to extract unique workflow content  
+3. Creates new or updates CLAUDE.md with proper file imports + preserved unique workflow
 4. Writes updated CLAUDE.md and stops
 ```
