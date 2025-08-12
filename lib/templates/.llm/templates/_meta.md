@@ -49,19 +49,26 @@ E-commerce web app for selling custom t-shirts. Currently in MVP phase with basi
 
 ## File-Specific Guidelines
 
-### project.md: Focus on WHAT and WHERE
-Answer: What is this project? What technologies? What's the current state? What are the constraints?
+### project.md: Focus on WHAT & CURRENT STATE (Facts Only)
+**Answer**: What is this project? What technologies and versions? What's the current state? What dependencies?
+**Include**: Technology stack with versions, project purpose, current phase, key dependencies, environment setup
+**Avoid**: Explaining WHY technologies were chosen, documenting HOW code is organized
 
-### patterns.md: Focus on HOW
-Answer: How is code organized? How do we style? How do we test? What patterns do we follow?
+### patterns.md: Focus on HOW & IMPLEMENTATION (Process & Structure)  
+**Answer**: How is code organized? How do development practices work? What implementation patterns are used?
+**Include**: Directory structure, naming conventions, testing practices, code style, development workflow
+**Avoid**: Explaining WHY patterns were chosen, listing technologies without implementation context
 
-### decisions.md: Focus on WHY
-Answer: Why did we choose these technologies? Why this architecture? What trade-offs were made?
+### decisions.md: Focus on WHY & RATIONALE (Reasoning & Trade-offs)
+**Answer**: Why were these technologies chosen? Why this architecture? What alternatives were considered?
+**Include**: Technology choice rationale, architecture decisions, trade-offs, constraints that influenced choices
+**Avoid**: Documenting current state facts, explaining implementation details
 
 ## Quality Check
 Before finishing, ensure:
 - No placeholder text remains
 - Information is specific to this actual project  
 - Content is dense but readable
-- Each file serves its specific purpose
-- Cross-references are accurate
+- **No overlap**: Each file covers distinct aspects (WHAT vs HOW vs WHY)
+- **Clear boundaries**: project.md = current facts, patterns.md = implementation, decisions.md = rationale
+- **No duplication**: Same information doesn't appear in multiple files

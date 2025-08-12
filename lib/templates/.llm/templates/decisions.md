@@ -29,10 +29,10 @@
 
 ## Architecture Decisions
 
-### Project Structure
-**Decision**: [e.g., Feature-based folders vs file-type based]
-**Why**: [e.g., Easier to find related files, scales better with team growth]
-**Impact**: [e.g., New developers can navigate codebase faster]
+### Error Handling Strategy
+**Decision**: [e.g., Error boundaries + toast notifications, centralized error logging]
+**Why**: [e.g., Better user experience, easier debugging, consistent error handling]
+**Impact**: [e.g., Reduced support requests, faster bug resolution]
 
 ### API Design
 **Decision**: [e.g., REST API, GraphQL, tRPC]
@@ -56,15 +56,15 @@
 **Why**: [e.g., Allows parallel development, code review process, rollback safety]
 **Branch Strategy**: [e.g., main + feature branches, squash merge]
 
-### Testing Strategy
-**Decision**: [e.g., Jest + React Testing Library, Cypress for E2E]
-**Why**: [e.g., Good React integration, encourages testing best practices]
-**Coverage Goals**: [e.g., 80% unit test coverage, E2E for critical paths]
+### Testing Approach
+**Decision**: [e.g., Unit tests + Integration tests, minimal E2E]
+**Why**: [e.g., Faster feedback loop, easier to maintain, good cost/benefit ratio]
+**Philosophy**: [e.g., Test behavior not implementation, focus on user-facing functionality]
 
-### Code Quality
-**Decision**: [e.g., ESLint + Prettier, Husky pre-commit hooks]
-**Why**: [e.g., Consistent code style, catch issues early, automated formatting]
-**Rules**: [e.g., Strict TypeScript, no console.log in production]
+### Code Quality Tools
+**Decision**: [e.g., ESLint + Prettier + Husky, SonarCloud for analysis]
+**Why**: [e.g., Prevent bugs before production, consistent team code style, automated enforcement]
+**Philosophy**: [e.g., Fail fast, automate what can be automated, focus reviews on logic]
 
 ## Business Constraints That Influenced Decisions
 

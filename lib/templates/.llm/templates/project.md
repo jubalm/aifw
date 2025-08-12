@@ -5,21 +5,24 @@
 
 ## Technology Stack
 ### Frontend
-- Framework: [e.g., React 18, Vue 3, Next.js 14]
-- Language: [e.g., TypeScript, JavaScript]
-- Styling: [e.g., Tailwind CSS, styled-components, CSS modules]
-- State Management: [e.g., Zustand, Redux, React Query]
+- **Framework**: [e.g., React 18.2.0]
+- **Language**: [e.g., TypeScript 5.2]
+- **Build Tool**: [e.g., Vite 4.5]
+- **Styling**: [e.g., Tailwind CSS 3.3]
+- **State Management**: [e.g., Zustand 4.4, React Query 4.36]
 
 ### Backend
-- Runtime: [e.g., Node.js, Python, Go]
-- Framework: [e.g., Express, FastAPI, Gin]
-- Database: [e.g., PostgreSQL, MongoDB, SQLite]
-- Authentication: [e.g., NextAuth, Firebase Auth, custom JWT]
+- **Runtime**: [e.g., Node.js 18.17]
+- **Framework**: [e.g., Express 4.18]
+- **Database**: [e.g., PostgreSQL 15.4]
+- **ORM/Client**: [e.g., Prisma 5.4, Drizzle]
+- **Authentication**: [e.g., NextAuth.js 4.24]
 
-### Infrastructure
-- Hosting: [e.g., Vercel, AWS, Railway]
-- CI/CD: [e.g., GitHub Actions, Vercel, none]
-- Monitoring: [e.g., Sentry, LogRocket, none]
+### Infrastructure & Tools
+- **Hosting**: [e.g., Vercel (frontend), Railway (backend)]
+- **Database Hosting**: [e.g., Supabase, PlanetScale]
+- **Monitoring**: [e.g., Sentry, Vercel Analytics]
+- **CI/CD**: [e.g., GitHub Actions, Vercel auto-deploy]
 
 ## Current State
 **Project Phase**: [e.g., early development, MVP, production, maintenance]
@@ -39,17 +42,10 @@
 - [e.g., Single developer, Remote team, Junior developers]
 - [e.g., Part-time project, Weekend project]
 
-## Project Structure
-```
-[Describe the main directories and their purposes]
-Example:
-src/
-├── components/     # Reusable UI components
-├── pages/         # Route components
-├── hooks/         # Custom React hooks
-├── utils/         # Helper functions
-└── types/         # TypeScript definitions
-```
+## Development Environment
+**Build Tools**: [e.g., Vite, Webpack, Create React App]
+**Package Manager**: [e.g., npm, yarn, pnpm]
+**Node Version**: [e.g., Node 18+, specific version requirements]
 
 ## Key Dependencies
 - [List the most important dependencies and what they're used for]

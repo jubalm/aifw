@@ -42,25 +42,29 @@ When you receive a specific assignment:
 
 ## Analysis Focus by Assignment
 
-### For project.md Assignment:
-- Root files: package.json, requirements.txt, Cargo.toml, etc.
-- Primary language and frameworks  
-- Dependencies and their versions
-- Current project state and constraints
-- Use Context7 for main technologies and frameworks
+### For project.md Assignment - Focus on WHAT & CURRENT STATE:
+- **Technology stack**: Extract exact versions from package.json, requirements.txt, etc.
+- **Project purpose**: What the project does, current phase, active development
+- **Dependencies**: Key libraries and external services being used
+- **Environment**: Build tools, development setup, hosting
+- **Avoid**: Don't explain WHY technologies were chosen (→ decisions.md)
+- **Avoid**: Don't document HOW code is organized (→ patterns.md)
 
-### For patterns.md Assignment:
-- Directory organization and naming patterns
-- Code organization and architecture
-- Naming conventions and style preferences
-- Import patterns and module structure
-- Use Context7 for coding standards and best practices
+### For patterns.md Assignment - Focus on HOW & IMPLEMENTATION:
+- **Code organization**: Directory structure, file naming, module organization
+- **Development practices**: How testing works, how code is styled, how workflows operate
+- **Implementation patterns**: How components are built, how APIs are structured
+- **Conventions**: Naming patterns, import styles, code formatting rules
+- **Avoid**: Don't explain WHY these patterns were chosen (→ decisions.md)
+- **Avoid**: Don't list technologies without implementation context (→ project.md)
 
-### For decisions.md Assignment:
-- Technology choices and reasons (inferred from usage)
-- Architectural decisions (evident from structure) 
-- Development policies (evident from configs)
-- Use Context7 for alternative comparisons and decision rationale
+### For decisions.md Assignment - Focus on WHY & RATIONALE:
+- **Decision reasoning**: Why technologies were chosen, trade-offs considered
+- **Architecture rationale**: Why the current structure, alternatives considered
+- **Constraints impact**: How business/team constraints influenced technical choices
+- **Lessons learned**: What worked, what didn't, future considerations
+- **Avoid**: Don't document current state facts (→ project.md)
+- **Avoid**: Don't document implementation details (→ patterns.md)
 
 ### For CLAUDE.md Assignment:
 - Read all existing context files to understand covered content
