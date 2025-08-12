@@ -47,14 +47,14 @@ After running `npx jubalm/aifw init --claude-code`:
    claude mcp add context7 -- npx -y @upstash/context7-mcp
    ```
 
-2. **Generate project context**:
+2. **Generate comprehensive project context**:
    ```
-   @context-builder analyze this project and generate context
+   @aifw-delegator generate comprehensive project context
    ```
 
-3. **Create specialized agents**:
+3. **Create specialized development agents**:
    ```
-   @agent-builder create specialized agents for this project
+   @aifw-delegator create specialized development agents
    ```
 
 ## Framework Structure
@@ -70,8 +70,9 @@ After running `npx jubalm/aifw init --claude-code`:
 
 .claude/                        # Claude Code specific
 └── agents/                     # Specialized AI agents
-    ├── llm-generator.md       # Context generation agent
-    └── agent-builder.md       # Agent creation agent
+    ├── aifw-delegator.md      # Delegation and coordination agent
+    ├── context-builder.md     # Context generation worker
+    └── agent-builder.md       # Agent creation worker
 ```
 
 ## Benefits

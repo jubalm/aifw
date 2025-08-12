@@ -18,21 +18,23 @@ claude mcp add context7 -- npx -y @upstash/context7-mcp
 
 ### 1. Context Generation
 ```
-@context-builder analyze this project and generate context
+@aifw-delegator generate comprehensive project context
 ```
-Analyzes your codebase and creates LLM-optimized context files in `context/`:
+Analyzes your project and coordinates parallel context generation:
 - `project.md` - Dense project facts and constraints
 - `patterns.md` - Code conventions informed by current documentation
 - `decisions.md` - Technology choices validated against current standards
+- Smart parallel execution for maximum efficiency
 
 ### 2. Agent Creation
 ```
-@agent-builder create specialized agents for this project
+@aifw-delegator create specialized development agents
 ```
-Reads the context files and generates project-specific agents:
+Reads the context files and coordinates creation of project-specific agents:
 - Development specialists (frontend, backend, API)
 - Quality agents (testing, security, performance)
 - Operations agents (deploy, monitoring, docs)
+- Intelligent parallel generation based on your tech stack
 
 ### 3. Context-Aware Development
 Use the generated agents for any development task. They have perfect project knowledge and follow established patterns automatically.
