@@ -49,12 +49,12 @@ After running `npx jubalm/aifw init --claude-code`:
 
 2. **Generate comprehensive project context**:
    ```
-   @aifw-delegator generate comprehensive project context
+   @aifw-meta generate comprehensive project context
    ```
 
 3. **Create specialized development agents**:
    ```
-   @aifw-delegator create specialized development agents
+   @aifw-meta create specialized development agents
    ```
 
 ## Framework Structure
@@ -70,9 +70,9 @@ After running `npx jubalm/aifw init --claude-code`:
 
 .claude/                        # Claude Code specific
 └── agents/                     # Specialized AI agents
-    ├── aifw-delegator.md      # Delegation and coordination agent
-    ├── context-builder.md     # Context generation worker
-    └── agent-builder.md       # Agent creation worker
+    ├── aifw-meta.md           # Meta-coordination and delegation
+    ├── aifw-context-builder.md # Context generation worker
+    └── aifw-agent-builder.md   # Intelligent agent creator
 ```
 
 ## Benefits
