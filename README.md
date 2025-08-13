@@ -18,7 +18,10 @@ Traditional documentation is written for humans. AIFW documentation is written f
 ## Quick Start
 
 ```bash
-# Interactive setup
+# Domain narrative architecture (testing)
+npx jubalm/aifw#domain-narratives init
+
+# Original WHAT/HOW/WHY architecture (stable)
 npx jubalm/aifw init
 
 # Tell any LLM:
@@ -40,6 +43,11 @@ AIFW works with any LLM or AI development tool:
 ### Claude Code (Enhanced)
 Automated context generation with specialized agents:
 ```bash
+# Test domain narratives
+npx jubalm/aifw#domain-narratives init --claude-code
+@aifw-meta generate comprehensive project context
+
+# Use stable version
 npx jubalm/aifw init --claude-code
 @aifw-meta generate comprehensive project context
 ```

@@ -1,13 +1,13 @@
-# Codebase Analysis Methodology
+# Codebase Analysis for Domain Discovery
 
-This document explains how to analyze a codebase to discover project reality for context generation.
+This document explains how to analyze a codebase to discover domain narratives and complete system stories for context generation.
 
-## Analysis-First Approach
+## Domain-Driven Analysis Approach
 
-- **Discover before writing**: Analyze package.json, source code, configs before generating content
+- **Discover domains, not categories**: Identify major system capabilities (authentication, data management, user experience, integrations, business logic)
+- **Complete narratives**: Each domain should tell a complete story from implementation to business rules to future plans
 - **Evidence-based content**: Every statement should be grounded in codebase analysis
-- **Current over assumed**: Use actual project patterns, not training data assumptions
-- **Version specificity**: Extract exact versions from package files
+- **Cross-cutting coherence**: Capture how concerns like security span multiple domains
 
 ## Technology Stack Discovery
 
@@ -99,18 +99,89 @@ This document explains how to analyze a codebase to discover project reality for
 - Payment integration configuration (Stripe, PayPal)
 - Monitoring and analytics setup (Sentry, Analytics)
 
-## Quality and Compliance Discovery
+## Domain-Specific Discovery
 
-### Code Quality Tools
-- **eslint**: Linting rules and code quality standards
-- **prettier**: Code formatting configuration
-- **husky**: Git hook automation and quality gates
-- **lint-staged**: Pre-commit quality checks
+### Authentication Domain Discovery
+**Authentication Implementation**:
+- **Auth libraries**: NextAuth.js, Auth0 SDK, Firebase Auth, Supabase Auth, custom JWT
+- **Session management**: Cookie configuration, token storage patterns, refresh logic
+- **Password handling**: bcrypt usage, password validation, reset mechanisms
+- **OAuth integration**: Provider configurations, callback handling, token exchange
 
-### Security and Compliance
-- **Security dependencies**: Security-focused packages and configurations
-- **Compliance requirements**: GDPR, HIPAA, or other regulatory needs
-- **Access control**: Authentication and authorization patterns
+**Authorization Patterns**:
+- **Middleware**: Authentication middleware, route protection, role checking
+- **Frontend auth**: Protected routes, conditional rendering, auth context/hooks
+- **Permission systems**: RBAC implementations, resource-based access, policy engines
+
+**Security Configurations**:
+- **CORS settings**: Origin whitelist, credential handling, preflight options
+- **Rate limiting**: Login attempt limits, API rate limiting, brute force protection
+- **Security headers**: CSP, HSTS, X-Frame-Options configurations
+
+### Data Management Domain Discovery
+**Database Architecture**:
+- **Database configuration**: Connection strings, pool settings, SSL configuration
+- **Schema definition**: Model files, migration scripts, seed data
+- **Relationship patterns**: Foreign keys, join tables, cascade rules
+
+**Query Patterns**:
+- **ORM usage**: Prisma schemas, TypeORM entities, Mongoose models, raw SQL
+- **Query optimization**: Indexes, query analysis, connection pooling
+- **Data validation**: Schema validation, input sanitization, type checking
+
+**Data Flow**:
+- **API endpoints**: CRUD operations, batch operations, search/filter endpoints
+- **Data transformations**: Serializers, DTOs, data mapping functions
+- **Caching strategies**: Redis usage, application cache, query result cache
+
+### User Experience Domain Discovery
+**Frontend Architecture**:
+- **Component structure**: Component hierarchy, reusable components, page components
+- **State management**: Context usage, state libraries, local vs global state
+- **Routing configuration**: Route definitions, guards, dynamic routing
+
+**UI Patterns**:
+- **Design system**: Component libraries, theme configuration, styling patterns
+- **Form handling**: Form libraries, validation patterns, error handling
+- **Loading/error states**: Loading components, error boundaries, fallback UI
+
+**User Flows**:
+- **Navigation patterns**: Menu structures, breadcrumbs, user journey flows
+- **Interactive elements**: Modals, tooltips, form interactions, data tables
+- **Responsive design**: Breakpoint usage, mobile patterns, touch interactions
+
+### Integrations Domain Discovery
+**Third-Party Services**:
+- **Payment processing**: Stripe, PayPal configurations, webhook endpoints
+- **Email services**: SendGrid, Mailgun configurations, template management
+- **File storage**: S3, Cloudinary configurations, upload handling
+- **Analytics**: Google Analytics, tracking implementations, event patterns
+
+**API Integrations**:
+- **External APIs**: Third-party API clients, authentication patterns, data mapping
+- **Webhook handling**: Incoming webhooks, signature verification, processing logic
+- **Service configurations**: API keys, environment-specific configurations
+
+**Data Exchange**:
+- **API design**: REST endpoints, GraphQL schemas, request/response patterns
+- **Serialization**: JSON handling, data transformation, validation
+- **Error handling**: API error responses, retry logic, fallback mechanisms
+
+### Business Logic Domain Discovery
+**Domain Models**:
+- **Business entities**: Core business objects, relationships, lifecycle management
+- **Validation rules**: Business rule validation, constraint checking, policy enforcement
+- **Workflow patterns**: State machines, approval processes, business process flows
+
+**Business Rules Implementation**:
+- **Calculation logic**: Pricing, tax, shipping, commission calculations
+- **Permission logic**: Business-specific access rules, resource ownership
+- **Process automation**: Background jobs, scheduled tasks, event handlers
+
+**Configuration & Customization**:
+- **Feature flags**: Feature toggle implementations, environment-specific features
+- **Business settings**: Configurable rules, tenant customizations, regional settings
+- **Compliance**: Regulatory compliance implementations, audit logging, data retention
 
 ## Analysis Output Format
 

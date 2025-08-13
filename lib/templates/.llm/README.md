@@ -34,14 +34,18 @@ This framework creates documentation designed for AI consumption. Dense, structu
 │   ├── context-generation.md   # Universal generation process
 │   ├── quality-standards.md    # What makes good context
 │   └── template-mapping.md     # Working with any template structure
-├── templates/             # Structure guides for output
-│   ├── project.md         # Project facts and constraints
-│   ├── patterns.md        # Code conventions and patterns
-│   └── decisions.md       # Technology choices and rationale
-└── context/               # Generated LLM-optimized files
-    ├── project.md         # Your project's current reality
-    ├── patterns.md        # Your project's implementation patterns
-    └── decisions.md       # Your project's technology decisions
+├── templates/             # Domain narrative templates
+│   ├── authentication.md      # Complete authentication story template
+│   ├── data-management.md      # Complete data architecture story template
+│   ├── user-experience.md      # Complete user interface story template
+│   ├── integrations.md         # Complete external services story template
+│   └── business-logic.md       # Complete domain rules story template
+└── context/               # Generated domain narratives
+    ├── authentication.md      # Your project's complete auth story
+    ├── data-management.md      # Your project's complete data story
+    ├── user-experience.md      # Your project's complete UX story
+    ├── integrations.md         # Your project's complete integration story
+    └── business-logic.md       # Your project's complete business story
 
 .claude/                   # Claude Code automation (optional)
 └── agents/                # Specialized automation agents
@@ -59,17 +63,20 @@ The `.llm/tasks/` folder contains platform-agnostic instructions that any LLM ca
 - **quality-standards.md**: What constitutes high-quality LLM documentation
 - **template-mapping.md**: How to work with evolving template structures
 
-### 2. Template Structure
-The `.llm/templates/` folder provides structure for consistent output:
-- **project.md**: Facts about current project state (WHAT)
-- **patterns.md**: Implementation details and processes (HOW)  
-- **decisions.md**: Technology choices and rationale (WHY)
+### 2. Domain Narrative Templates
+The `.llm/templates/` folder provides complete story structures for each major system domain:
+- **authentication.md**: Complete auth story (flows, security, implementation, policies)
+- **data-management.md**: Complete data story (models, access, storage, performance)
+- **user-experience.md**: Complete UX story (interfaces, flows, components, optimization)
+- **integrations.md**: Complete integration story (APIs, services, webhooks, reliability)
+- **business-logic.md**: Complete business story (rules, processes, workflows, intelligence)
 
-### 3. Generated Context
-The `.llm/context/` folder contains your project's AI-ready documentation:
-- Dense, structured information optimized for machine consumption
-- Evidence-based content derived from actual codebase analysis
-- Current project reality, not generic examples
+### 3. Generated Domain Narratives
+The `.llm/context/` folder contains complete stories about your project's major capabilities:
+- Each domain tells a complete story from technical implementation to business value
+- Cross-cutting concerns (security, performance) captured within relevant domain context
+- Evidence-based narratives derived from actual codebase analysis
+- Complete system understanding optimized for LLM reasoning
 
 ## Common Workflows
 
@@ -90,19 +97,20 @@ The `.llm/context/` folder contains your project's AI-ready documentation:
 
 #### Manual (Any LLM)
 ```
-1. Tell your LLM: "Read .llm/tasks/codebase-analysis.md and analyze this project"
-2. Then: "Generate project context using .llm/templates/project.md structure"  
-3. Repeat for patterns.md and decisions.md
-4. Save output to .llm/context/ folder
+1. Tell your LLM: "Read .llm/tasks/codebase-analysis.md and analyze this project for domain narratives"
+2. Then: "Generate complete authentication story using .llm/templates/authentication.md"  
+3. Repeat for data-management.md, user-experience.md, integrations.md, business-logic.md
+4. Save each domain narrative to .llm/context/ folder
 ```
 
 #### Copy-Paste (Web LLMs)
 For ChatGPT, Gemini, etc.:
 1. Copy content from `.llm/tasks/codebase-analysis.md`
 2. Paste in chat with: "Analyze my project following this methodology"
-3. Copy relevant template from `.llm/templates/`
-4. Paste with: "Generate context using this template structure"
+3. Copy relevant domain template from `.llm/templates/`
+4. Paste with: "Generate complete domain story using this template structure"
 5. Save response to appropriate `.llm/context/` file
+6. Repeat for each domain (authentication, data-management, user-experience, integrations, business-logic)
 
 ### Using Generated Context
 
@@ -115,9 +123,11 @@ For ChatGPT, Gemini, etc.:
 
 #### For Development Tasks
 ```
-"Based on .llm/context/patterns.md, create a new component that follows our conventions"
-"Using .llm/context/decisions.md, recommend the best approach for [specific problem]"
-"According to .llm/context/project.md, what's our current tech stack?"
+"Based on .llm/context/authentication.md, implement secure user registration flow"
+"Using .llm/context/data-management.md, create a new data model following our patterns"
+"According to .llm/context/user-experience.md, build a component that matches our design system"
+"From .llm/context/integrations.md, add webhook handling for new external service"
+"Using .llm/context/business-logic.md, implement workflow validation rules"
 ```
 
 ### Context Updates
@@ -154,28 +164,28 @@ AIFW works perfectly without Context7:
 ## Quality Assurance
 
 ### Context Validation Checklist
-- [ ] No placeholder text in generated files
-- [ ] All version numbers verified from actual package files
-- [ ] Directory structures match actual project
-- [ ] Technology claims supported by file evidence
-- [ ] Content follows template boundaries (WHAT/HOW/WHY)
+- [ ] Each domain tells a complete story from implementation to business value
+- [ ] All technical claims supported by codebase analysis
+- [ ] Cross-cutting concerns (security, performance) captured within domain context
+- [ ] Integration points between domains clearly documented
+- [ ] No duplicate information across domains - each owns its complete story
 
 ### Common Issues and Fixes
 
-#### Generic Content
-**Problem**: Context could apply to any project
-**Fix**: Re-analyze with focus on project-specific evidence
-**Example**: "React application" → "E-commerce platform with 47 product components"
+#### Incomplete Domain Stories
+**Problem**: Domain narrative missing key aspects (technical, business, or user impact)
+**Fix**: Re-analyze domain using complete discovery methodology
+**Example**: Authentication domain missing user flows → add complete login/registration/password reset stories
 
-#### Missing Specificity
-**Problem**: Technologies listed without versions
-**Fix**: Extract exact versions from package.json, requirements.txt, etc.
-**Example**: "Uses React" → "React 18.2.0 (package.json:dependencies)"
+#### Cross-Domain Content Duplication
+**Problem**: Same information appearing in multiple domain narratives
+**Fix**: Assign ownership to most relevant domain, reference from others
+**Example**: Database security appears in both data-management.md and authentication.md → own in data-management, reference in authentication
 
-#### Boundary Violations
-**Problem**: Wrong content type in template
-**Fix**: Move content to appropriate template
-**Example**: Technology rationale in project.md → move to decisions.md
+#### Generic Domain Content
+**Problem**: Domain narrative could apply to any project in same category
+**Fix**: Ground in specific codebase analysis and project evidence
+**Example**: "Standard OAuth flow" → "Google OAuth with NextAuth.js 4.24.5, custom callback handling in /api/auth/[...nextauth].js"
 
 ## Team Collaboration
 
@@ -232,11 +242,11 @@ AIFW works perfectly without Context7:
 
 ## Framework Philosophy
 
-### LLM-First Design
-- Documentation optimized for AI consumption, not human readability
-- Dense, structured format for maximum context in minimal tokens
-- Evidence-based content grounded in actual project analysis
-- Current standards integration when enhancement tools available
+### Domain Narrative Design
+- Complete stories for each major system capability optimized for AI reasoning
+- Cross-cutting concerns captured coherently within domain context  
+- Evidence-based narratives grounded in actual project analysis
+- Holistic understanding enabling sophisticated LLM decision-making
 
 ### Universal Compatibility
 - Works with any LLM or AI development tool
