@@ -1,166 +1,301 @@
-# Domain Narrative Generation Methodology
+# Universal Context Generation Methodology
 
-This document explains the universal process for generating complete domain stories that capture the full context of system capabilities.
+This document provides the complete methodology for generating LLM-optimized context, supporting any template structure through template-agnostic analysis and quality-assured generation.
 
-## Domain Narrative Philosophy
+## Core Philosophy
 
-### Complete Story Approach
-- **Holistic understanding**: Each domain file tells the complete story of one system capability
-- **Cross-cutting coherence**: Capture how concerns like security, performance, and business rules span technical implementation
-- **Evidence-based narratives**: Every statement grounded in codebase analysis and system behavior
-- **LLM optimization**: Dense, structured format optimized for AI comprehension and reasoning
+### Universal Principles
+- **Template Agnostic**: Works with any template structure (domain narratives, WHAT/HOW/WHY, custom formats)
+- **Evidence-Based**: Every statement grounded in discoverable codebase analysis
+- **LLM Optimized**: Dense, structured format optimized for AI comprehension and reasoning
+- **Quality Assured**: Integrated quality standards throughout generation process
+- **Enhancement Ready**: Seamless integration with available tools (Context7, etc.)
 
-### Domain-Driven Generation Process
-1. **Domain Identification**: Determine which major system domain to analyze
-2. **Complete Analysis**: Gather all aspects of that domain (technical, business, user, integration)
-3. **Narrative Construction**: Build coherent story from implementation to business rules to future plans
-4. **Enhancement Integration**: Use available tools (Context7, etc.) for current best practices
+### Generation Process Overview
+1. **Template Analysis**: Read and understand any template structure
+2. **Content Classification**: Identify what type of content each section needs
+3. **Evidence Gathering**: Apply appropriate codebase analysis methodology
+4. **Quality Integration**: Apply standards throughout generation
+5. **Enhancement Integration**: Use available tools for current best practices
 
-## Domain Narrative Generation Workflow
+## Universal Generation Workflow
 
-### Step 1: Domain Template Understanding
-- Read the assigned domain template to understand the complete story structure
-- Identify the domain's scope (authentication, data-management, user-experience, integrations, business-logic)
-- Note sections that require technical implementation details, business logic, user flows, and future plans
-- Understand how this domain interacts with other system domains
+### Step 1: Template Analysis and Classification
+**Template-Agnostic Approach**: Works with any template structure
 
-### Step 2: Comprehensive Domain Analysis
-- Check for available enhancement tools (Context7, documentation APIs) for current best practices
-- Apply domain-specific discovery techniques from codebase analysis methodology
-- Prepare to gather complete evidence for the domain story
+#### Template Structure Discovery
+1. **Read template file**: Scan `.llm/templates/` directory to identify available templates
+2. **Understand sections**: Identify what each template section requires
+3. **Classify content type**: Determine if sections need facts, implementation, rationale, or mixed content
+4. **Map to analysis**: Connect template requirements to appropriate codebase analysis methods
 
-### Step 3: Complete Domain Discovery
-Apply analysis methodology to capture all aspects of the assigned domain:
+#### Content Type Classification
+- **Facts/Current State (WHAT)**: Technology versions, current configuration, project status
+- **Implementation/Process (HOW)**: Code organization, development practices, workflows
+- **Rationale/Decisions (WHY)**: Technology choices, architectural reasoning, trade-offs
+- **Domain Narratives**: Complete stories spanning technical, business, and user aspects
+- **Hybrid Content**: Mixed content types within single template
 
-#### For Authentication Domain
-- **Technical Implementation**: Auth libraries, session management, token handling, security configurations
-- **User Flows**: Login/logout processes, registration flows, password reset, OAuth redirects
-- **Security Policies**: Access control rules, permission systems, audit requirements
-- **Integration Patterns**: SSO, external providers, API authentication, webhook security
-- **Business Rules**: Account policies, compliance requirements, data protection
-- **Performance & Reliability**: Rate limiting, session optimization, security monitoring
-- **Future Plans**: Planned security enhancements, compliance roadmap
+### Step 2: Quality-Assured Analysis Preparation
+#### Enhancement Tool Detection
+- Check for available enhancement tools (Context7, documentation APIs)
+- Test tool accessibility and functionality
+- Prepare fallback methodology for unavailable tools
 
-#### For Data Management Domain
-- **Technical Architecture**: Database setup, ORM patterns, query optimization, caching strategies
-- **Data Models**: Entity relationships, validation rules, schema evolution
-- **Access Patterns**: CRUD operations, search/filter, real-time updates, data synchronization  
-- **Security & Privacy**: Access control, encryption, compliance, audit logging
-- **Integration Points**: External data sources, APIs, file storage, backups
-- **Performance**: Query optimization, connection pooling, monitoring
-- **Future Plans**: Scaling strategies, data architecture evolution
+#### Evidence Standards Setup
+- **Version Specificity**: All technologies must include exact version numbers
+- **Source Attribution**: Claims must reference specific files or analysis results
+- **Current Accuracy**: Information must reflect actual project state, not assumptions
+- **Boundary Compliance**: Content must stay within template scope
 
-#### For User Experience Domain
-- **Technical Architecture**: Frontend framework, component structure, state management, routing
-- **User Interface**: Design system, component library, responsive design, accessibility
-- **User Flows**: Navigation patterns, form interactions, error handling, loading states
-- **Performance**: Bundle optimization, runtime performance, user experience metrics
-- **Development Experience**: Component development, testing, quality assurance
-- **Integration**: API integration, real-time updates, external service integration
-- **Future Plans**: UX improvements, performance optimization, feature development
+### Step 3: Targeted Analysis Execution
+Apply methodology from codebase analysis, targeted to content classification:
 
-#### For Integrations Domain
-- **Technical Implementation**: API design, third-party services, webhook management, data formats
-- **Service Integration**: Payment processing, email services, file storage, analytics, monitoring
-- **Security & Reliability**: Authentication patterns, error handling, retry logic, monitoring
-- **Data Exchange**: Import/export, bulk operations, real-time synchronization
-- **Performance**: Caching, request optimization, timeout management
-- **Development**: Environment management, testing strategies, documentation
-- **Future Plans**: Integration roadmap, service migration, capability expansion
+#### For Facts/Current State Content (WHAT)
+**Analysis Focus**: Current project reality and technology facts
+- **Technology Stack**: Package management analysis for exact versions
+- **Environment Configuration**: Development setup, deployment configuration
+- **Current State**: Project phase inference from git/version analysis
+- **External Integrations**: Service connections with evidence
+- **Constraints**: Only factual constraints discoverable from code/config
 
-#### For Business Logic Domain
-- **Domain Model**: Business entities, relationships, core business rules, validation constraints
-- **Business Processes**: User lifecycle, core workflows, state transitions, approval processes
-- **Implementation**: Domain services, calculation engines, rule engines, workflow systems
-- **Integration**: External business systems, CRM, ERP, analytics, compliance systems
-- **Configuration**: Business settings, feature flags, tenant customization, compliance rules
-- **Analytics**: Business metrics, reporting, dashboards, performance monitoring
-- **Future Plans**: Business capability expansion, rule engine enhancement, process automation
+**Quality Standards**:
+- All version numbers verified from package files
+- No explanations of WHY technologies were chosen
+- No implementation details (belongs in HOW content)
+- Current state reflects actual project analysis
 
-### Step 4: Enhancement Integration
-When enhancement tools are available:
+#### For Implementation/Process Content (HOW)
+**Analysis Focus**: Code organization and development practices
+- **Directory Structure**: Real file system analysis with counts
+- **Code Organization**: Import patterns, naming conventions, co-location strategies
+- **Development Workflow**: Scripts from package.json, git hooks, automation
+- **Testing Strategy**: Test frameworks, patterns, coverage from actual configs
+- **Build Process**: Build tools and configuration from actual setup
 
-#### Context7 Integration
-- Query for current best practices related to discovered technologies
-- Validate that discovered patterns align with current standards
-- Identify any deprecated approaches in existing codebase
-- Enhance decision rationale with current architectural recommendations
+**Quality Standards**:
+- Directory structure matches actual project
+- File counts and patterns verified through analysis
+- No technology lists without implementation context
+- Development workflow based on discovered scripts/configs
+- No explanations of WHY patterns were chosen
 
-#### Documentation APIs
-- Cross-reference discovered patterns with official documentation
-- Validate version compatibility and current support status
-- Identify migration paths for outdated dependencies
+#### For Rationale/Decisions Content (WHY)
+**Analysis Focus**: Technology choices and architectural reasoning
+- **Decision Structure**: Decision/Why/Alternatives/Trade-offs format
+- **Technology Choices**: Infer rationale from architecture, commit messages
+- **Constraint Analysis**: Business/team/technical constraints from codebase evidence
+- **Trade-off Documentation**: Visible compromises and their reasoning
+- **Enhancement Integration**: Context7 insights for current alternatives
 
-### Step 5: Content Generation
-- Create dense, factual content optimized for LLM consumption
-- Include specific evidence for every claim (file paths, version numbers)
-- Use bullet points over prose for better parsing
-- Focus on current project reality, not generic examples
+**Quality Standards**:
+- Decisions follow structured format (Decision/Why/Alternatives/Trade-offs)
+- Rationale inferred from discoverable evidence
+- No current state facts (belongs in WHAT content)
+- No implementation details (belongs in HOW content)
 
-## Writing Style Guidelines
+#### For Domain Narrative Content (Complete Stories)
+**Analysis Focus**: Complete domain capability stories
 
-### Information Density
+**Authentication Domain**:
+- Technical Implementation, User Flows, Security Policies, Integration Patterns
+- Business Rules, Performance & Reliability, Future Plans
+
+**Data Management Domain**:
+- Technical Architecture, Data Models, Access Patterns, Security & Privacy
+- Integration Points, Performance, Future Plans
+
+**User Experience Domain**:
+- Technical Architecture, User Interface, User Flows, Performance
+- Development Experience, Integration, Future Plans
+
+**Integrations Domain**:
+- Technical Implementation, Service Integration, Security & Reliability
+- Data Exchange, Performance, Development, Future Plans
+
+**Business Logic Domain**:
+- Domain Model, Business Processes, Implementation, Integration
+- Configuration, Analytics, Future Plans
+
+**Operations Domain**:
+- Environment Management, Service Setup, Health Checks, Deployment Strategies
+- Backup & Recovery, Troubleshooting, Security & Compliance, Metrics
+
+**Quality Standards for Domain Narratives**:
+- Complete story from technical implementation to business value
+- Cross-cutting concerns captured within domain context
+- Integration points between domains clearly documented
+- Evidence-based content throughout narrative
+
+#### For Hybrid Content Templates
+**Section-Based Approach**:
+- Analyze each section independently
+- Apply appropriate content type methodology per section
+- Maintain clear boundaries within template
+- Use section headers to indicate content type shifts
+
+### Step 4: Quality-Assured Enhancement Integration
+#### Context7 Available
+When Context7 MCP tools are accessible:
+
+**Usage Requirements**:
+- Query Context7 for technologies discovered in codebase analysis
+- Cross-reference patterns with current framework documentation
+- Validate that discovered approaches are still recommended
+- Include modern alternatives for any deprecated patterns found
+
+**Quality Indicators**:
+- Header includes: "*Analysis enhanced with Context7 current documentation*"
+- Decision rationale includes current architectural recommendations
+- Pattern analysis notes modern vs legacy approaches
+- Technology versions validated against current support status
+
+#### Context7 Unavailable
+When Context7 MCP tools are not accessible:
+
+**Fallback Standards**:
+- Rely on codebase analysis and built-in training knowledge
+- Focus on patterns actually observed in the codebase
+- Include limitations disclaimer in output
+- Avoid speculation about current best practices
+
+**Quality Indicators**:
+- Header includes: "*Analysis based on codebase discovery + training data*"
+- Explicit focus on observed patterns rather than assumed best practices
+- Conservative recommendations based on stable, well-established practices
+
+### Step 5: Quality-Assured Content Generation
+#### LLM Optimization Standards
+- **Information Density**: Dense, factual content optimized for LLM consumption
+- **Evidence Integration**: Include specific evidence for every claim (file paths, version numbers)
+- **Parsing Optimization**: Use bullet points over prose for better parsing
+- **Project Specificity**: Focus on current project reality, not generic examples
+
+#### Content Quality Requirements
+- **No Placeholder Content**: All content must be project-specific
+- **Version Specificity**: All technologies include exact version numbers
+- **Boundary Compliance**: Content stays within identified template scope
+- **Evidence Grounding**: Every claim supported by discoverable analysis
+
+## Integrated Quality Standards
+
+### Information Density Standards
 - **Good**: "React 18.2.0, TypeScript 5.2.1, Vite 4.5.0"
 - **Bad**: "The project utilizes React along with TypeScript and uses Vite as the build tool"
 
-### Evidence-Based Claims
+### Evidence-Based Standards
 - **Good**: "Jest 29.1.0 with React Testing Library 13.4.0 (package.json:devDependencies)"
 - **Bad**: "Uses Jest for testing"
 
-### Specific Over General
+### Specificity Standards
 - **Good**: "Components in src/components/ with co-located tests in __tests__ folders (15 components analyzed)"
 - **Bad**: "Components are organized in a structured way"
 
-### Current Information
+### Current Information Standards
 - Always use actual project data, never placeholders
 - Include version numbers from actual package files
 - Reference real directory structures and file counts
 - Quote actual configuration values
 
-## Domain Narrative Construction
+### Template Boundary Standards
+- **Facts Content**: No WHY explanations, no HOW implementations
+- **Implementation Content**: No WHY rationale, no WHAT technology lists without context
+- **Rationale Content**: No WHAT current state facts, no HOW implementation details
+- **Domain Narratives**: Complete stories with clear domain boundaries
 
-### Narrative Structure Principles
-**Complete Story Arc**: Each domain narrative should include current implementation, business context, user impact, integration patterns, and future evolution
-**Cross-Cutting Concerns**: Capture how aspects like security, performance, and compliance span across technical and business considerations
-**Evidence Grounding**: All narrative elements must be supported by codebase analysis or system behavior observation
-**Future Continuity**: Include planned developments, known limitations, and evolution roadmap
+### Common Quality Issues and Fixes
+#### Generic Content Issue
+- **Problem**: Content could apply to any project
+- **Fix**: Replace with project-specific analysis results
+- **Example**: "Modern React application" → "E-commerce platform with 47 product components, Stripe integration"
 
-### Domain Storytelling Guidelines
+#### Missing Version Specificity
+- **Problem**: Technologies listed without versions
+- **Fix**: Extract exact versions from package files
+- **Example**: "Uses React and TypeScript" → "React 18.2.0, TypeScript 5.2.1"
 
-#### Authentication Narrative Structure
-- **Current System Overview**: What authentication system exists today, how it works end-to-end
-- **Implementation Deep Dive**: Technical architecture, libraries, configurations, security measures
-- **User Experience**: Login flows, registration process, error handling, security policies
-- **Business Integration**: How auth supports business requirements, compliance, user management
-- **Challenges & Evolution**: Current limitations, planned improvements, security roadmap
+#### Boundary Violations
+- **Problem**: WHY content in WHAT templates, etc.
+- **Fix**: Move content to appropriate template type
+- **Example**: Technology choices explained in facts content → move to rationale content
 
-#### Data Management Narrative Structure  
-- **Data Architecture Story**: How data flows through the system, storage strategy, access patterns
-- **Technical Implementation**: Database setup, ORM patterns, query strategies, performance optimization
-- **Business Data Rules**: Validation, relationships, business logic, compliance requirements  
-- **Integration Patterns**: How data connects to external systems, APIs, synchronization
-- **Scaling & Evolution**: Performance challenges, future data strategy, planned improvements
+## Template-Agnostic Flexibility
 
-#### User Experience Narrative Structure
-- **Interface Architecture**: How the UI is built, component system, design patterns
-- **User Journey Mapping**: Key user flows, interactions, responsive behavior, accessibility
-- **Technical Implementation**: Frontend technology, state management, performance optimization
-- **Development Process**: How UI is built, tested, maintained, evolved
-- **Future Experience Vision**: Planned UX improvements, new features, optimization goals
+### Template Evolution Handling
+#### Adding New Templates
+When new templates are introduced:
+1. **Read new template**: Understand its focus and required sections
+2. **Identify content type**: Determine if it needs facts, process, rationale, or hybrid
+3. **Map analysis methods**: Choose appropriate codebase analysis techniques
+4. **Apply quality standards**: Use existing quality metrics for new content type
 
-#### Integrations Narrative Structure
-- **Integration Ecosystem**: What external services connect to the system and how
-- **Technical Patterns**: API design, webhook handling, authentication, data exchange
-- **Business Value**: Why each integration exists, what business capability it provides
-- **Reliability & Performance**: Error handling, monitoring, optimization, scaling
-- **Integration Roadmap**: Planned integrations, migrations, capability expansion
+#### Modifying Existing Templates
+When current templates change structure:
+1. **Identify changes**: Compare new template against current methodology
+2. **Adjust analysis scope**: Modify codebase analysis to match new requirements
+3. **Update content focus**: Shift content generation to new structure
+4. **Maintain quality**: Apply same quality standards to new format
 
-#### Business Logic Narrative Structure
-- **Domain Model Story**: Core business entities, relationships, rules, constraints
-- **Process Implementation**: How business workflows are implemented technically
-- **Rule Engine**: Business logic implementation, validation, customization capabilities
-- **Business Intelligence**: Analytics, reporting, metrics, decision support systems
-- **Business Evolution**: Planned business features, rule changes, process improvements
+#### Template Consolidation or Splitting
+- **Consolidation**: Combine analysis from multiple templates while maintaining boundaries
+- **Splitting**: Divide content according to new boundaries without gaps
+- **Backward Compatibility**: Support both old and new formats during transition
+
+### Universal Section Mapping
+#### Technology/Stack Sections
+- **Analysis Method**: Package management and configuration analysis
+- **Content Type**: Current technology facts with versions
+- **Enhancement**: Context7 validation of technology currency
+
+#### Organization/Structure Sections
+- **Analysis Method**: Directory and file pattern analysis
+- **Content Type**: Actual project organization with evidence
+- **Enhancement**: Modern organizational pattern recommendations
+
+#### Decision/Choice Sections
+- **Analysis Method**: Architecture inference and constraint discovery
+- **Content Type**: Rationale with Decision/Why/Alternatives/Trade-offs structure
+- **Enhancement**: Context7 current architectural recommendations
+
+#### Process/Workflow Sections
+- **Analysis Method**: Script and configuration analysis
+- **Content Type**: Development practices from discovered tools/configs
+- **Enhancement**: Modern workflow pattern validation
+
+### Domain Narrative Construction (When Applicable)
+
+#### Narrative Structure Principles
+- **Complete Story Arc**: Current implementation, business context, user impact, integration patterns, future evolution
+- **Cross-Cutting Concerns**: Security, performance, compliance span across technical and business considerations
+- **Evidence Grounding**: All narrative elements supported by codebase analysis
+- **Future Continuity**: Planned developments, known limitations, evolution roadmap
+
+#### Domain-Specific Narrative Structures (When Templates Require Complete Domain Stories)
+
+**Authentication Domain Structure**:
+- Current System Overview, Implementation Deep Dive, User Experience
+- Business Integration, Challenges & Evolution
+
+**Data Management Domain Structure**:
+- Data Architecture Story, Technical Implementation, Business Data Rules
+- Integration Patterns, Scaling & Evolution
+
+**User Experience Domain Structure**:
+- Interface Architecture, User Journey Mapping, Technical Implementation
+- Development Process, Future Experience Vision
+
+**Integrations Domain Structure**:
+- Integration Ecosystem, Technical Patterns, Business Value
+- Reliability & Performance, Integration Roadmap
+
+**Business Logic Domain Structure**:
+- Domain Model Story, Process Implementation, Rule Engine
+- Business Intelligence, Business Evolution
+
+**Operations Domain Structure**:
+- Environment Management, Service Setup, Health Checks
+- Deployment Strategies, Backup & Recovery, Troubleshooting
+- Security & Compliance, Metrics & KPIs
 
 ## Quality Assurance
 
@@ -234,3 +369,26 @@ Weave evidence throughout the narrative:
 
 The system implements OAuth 2.0 flows with three primary providers...
 ```
+
+## Implementation Notes
+
+### For Agent Usage
+Agents should:
+1. Read this comprehensive methodology file
+2. Apply appropriate sections based on template analysis
+3. Follow quality standards throughout generation
+4. Reference codebase analysis methodology for discovery techniques
+
+### For Direct LLM Usage
+Any LLM can:
+1. Follow this methodology sequentially
+2. Apply template-agnostic approach for any structure
+3. Integrate quality standards throughout process
+4. Use enhancement tools when available, fallback gracefully when not
+
+### Methodology Stability
+Regardless of template evolution:
+- Core analysis methods remain stable
+- Quality standards adapt to new content types
+- Enhancement integration scales with any template
+- Evidence-based approach persists across all formats

@@ -34,13 +34,46 @@ POST /api/webhooks/stripe
 - Send confirmation emails
 ```
 
-### Authentication Services
-**Identity Provider**: [e.g., Auth0, Firebase Auth, AWS Cognito, Supabase Auth, Custom]
-**OAuth Providers**: [e.g., Google, GitHub, Microsoft, Apple, LinkedIn, Discord]
-**Implementation**:
-- **SSO Integration**: [e.g., SAML, OAuth 2.0, OpenID Connect]
-- **User Synchronization**: [e.g., Profile data sync, Role mapping, Group membership]
-- **Session Management**: [e.g., Token refresh, Single logout, Cross-domain sessions]
+### Authentication Provider Integration
+**Primary Authentication Strategy**: [e.g., Password-based with provider, OAuth-only, Multi-provider, Custom implementation]
+**Identity Provider**: [e.g., Auth0, Firebase Auth, AWS Cognito, Supabase Auth, Convex Auth, Custom]
+**Provider Configuration**:
+- **Password Providers**: [e.g., @convex-dev/auth Password provider, Auth0 Database connections, Custom bcrypt implementation]
+- **OAuth Providers**: [e.g., Google, GitHub, Microsoft, Apple, LinkedIn, Discord, Twitter]
+- **Enterprise SSO**: [e.g., SAML, OAuth 2.0, OpenID Connect, Active Directory, Okta]
+
+**Authentication Implementation Patterns**:
+- **Frontend Integration**: [e.g., React Auth hooks, Provider components, Authentication context, Route protection]
+- **Backend Integration**: [e.g., Middleware authentication, JWT validation, Session management, User context]
+- **Token Management**: [e.g., HTTP-only cookies, localStorage, Bearer tokens, Refresh token rotation]
+
+**Authentication Flow Architecture**:
+```typescript
+// Example authentication integration patterns
+1. User Authentication: Login form → Provider validation → Token generation → Session creation
+2. OAuth Flow: Provider redirect → Authorization code → Token exchange → User creation/login
+3. Session Management: Token validation → User context → Route access → Automatic refresh
+4. Logout Flow: Session invalidation → Token cleanup → Redirect handling
+```
+
+**User Management Integration**:
+- **User Registration**: [e.g., Email verification, Profile creation, Default role assignment, Welcome flows]
+- **User Synchronization**: [e.g., Profile data sync from provider, Role mapping, Group membership, Custom claims]
+- **Session Management**: [e.g., Token refresh patterns, Single logout, Cross-domain sessions, Device management]
+
+**Authentication Security Patterns**:
+- **Password Security**: [e.g., Provider-handled hashing, Password complexity rules, Reset flows, Account lockout]
+- **Token Security**: [e.g., JWT signing with RS256, Token expiration, Refresh token security, CSRF protection]
+- **Session Security**: [e.g., HTTP-only cookies, Secure flags, SameSite attributes, Session timeout]
+
+**Provider-Specific Configuration**:
+```typescript
+// Example provider configurations
+// Convex Auth: convexAuth with Password provider, OAuth providers
+// Auth0: Domain, client ID/secret, callback URLs, scopes
+// Firebase: Project config, API keys, OAuth provider setup
+// Custom: JWT keys, password hashing, session storage
+```
 
 ### Email Services
 **Email Provider**: [e.g., SendGrid, Mailgun, AWS SES, Postmark, Resend]
