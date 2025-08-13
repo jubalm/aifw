@@ -2,7 +2,18 @@
 
 **The LLM-First Development Framework**
 
-AIFW creates optimized project context for AI development tools. Humans make decisions, LLMs execute with perfect context awareness.
+AIFW creates documentation optimized for AI consumption. Dense, structured, machine-readable format designed for perfect LLM comprehension, not human readability.
+
+## Philosophy
+
+**Humans make decisions. LLMs execute.**
+
+Traditional documentation is written for humans. AIFW documentation is written for LLMs - optimized for AI consumption with:
+
+- **Dense Information**: Maximum context in minimal tokens
+- **Structured Format**: Consistent patterns LLMs can parse perfectly  
+- **Evidence-Based**: Generated from actual codebase analysis
+- **Current Standards**: Enhanced with up-to-date patterns when possible
 
 ## Quick Start
 
@@ -10,76 +21,76 @@ AIFW creates optimized project context for AI development tools. Humans make dec
 # Interactive setup
 npx jubalm/aifw init
 
-# Direct Claude Code setup
-npx jubalm/aifw init --claude-code
+# Tell any LLM:
+"Generate comprehensive project context using AIFW templates"
 ```
 
-## What It Does
+This creates `.llm/context/` with optimized documentation your LLM can instantly understand.
 
-AIFW sets up:
+## Universal Compatibility
 
-### Universal `.llm/` Structure
-- **LLM-optimized context files** - Dense, structured documentation designed for machine consumption
-- **Meta-instructions** - Teaches LLMs how to write optimal context
-- **Skeleton templates** - Ready for AI agents to populate with real project data
+AIFW works with any LLM or AI development tool:
 
-### Platform-Specific Integration
-- **Claude Code**: Specialized agents for context generation and project analysis
-- **More platforms coming**: Cursor, VSCode, and other AI development tools
+### Any LLM
+```
+"Read the project context from .llm/context/ folder"
+"Generate code following the patterns documented there"
+```
 
-## Philosophy
+### Claude Code (Enhanced)
+Automated context generation with specialized agents:
+```bash
+npx jubalm/aifw init --claude-code
+@aifw-meta generate comprehensive project context
+```
 
-**Humans make decisions. LLMs execute.**
-
-Traditional documentation is written for humans. AIFW documentation is written for LLMs - dense, structured, and optimized for AI consumption. This creates:
-
-- **Zero Context Loss**: AI agents always understand your project perfectly
-- **Current Standards**: Context informed by up-to-date documentation via Context7 MCP
-- **Consistency**: All code follows established patterns automatically
-- **Self-Organization**: System creates exactly the specialists you need
-
-## For Claude Code Users
-
-After running `npx jubalm/aifw init --claude-code`:
-
-1. **Install Context7 MCP** for up-to-date documentation:
-   ```bash
-   claude mcp add context7 -- npx -y @upstash/context7-mcp
-   ```
-
-2. **Generate comprehensive project context**:
-   ```
-   @aifw-meta generate comprehensive project context
-   ```
-
-3. **Create specialized development agents**:
-   ```
-   @aifw-meta create specialized development agents
-   ```
+### Other Platforms
+Manual context generation using provided templates. Scripts coming for Cursor, VSCode, and other AI tools.
 
 ## Framework Structure
 
 ```
-.llm/                           # Universal LLM framework
-├── README.md                   # Human framework documentation  
-└── context/                    # LLM-optimized context files
-    ├── _meta.md               # Instructions for writing context
-    ├── project.md             # Project facts and constraints
-    ├── patterns.md            # Code conventions and patterns
-    └── decisions.md           # Technology choices and policies
+.llm/                            # Universal LLM framework
+├── README.md                    # Setup instructions
+├── templates/                   # Generation templates
+│   ├── project.md              # Project overview template
+│   ├── patterns.md             # Code patterns template
+│   └── decisions.md            # Technology decisions template
+└── context/                     # Generated LLM-optimized files
+    ├── project.md              # Project facts and constraints
+    ├── patterns.md             # Code conventions and patterns
+    └── decisions.md            # Technology choices and policies
 
-.claude/                        # Claude Code specific
-└── agents/                     # Specialized AI agents
-    ├── aifw-meta.md           # Meta-coordination and delegation
+.claude/                         # Claude Code specific (optional)
+└── agents/                      # Automated generation agents
+    ├── aifw-meta.md            # Meta-coordination
     ├── aifw-context-builder.md # Context generation worker
-    └── aifw-agent-builder.md   # Intelligent agent creator
+    └── aifw-agent-builder.md   # Specialized agent creator
 ```
+
+## Team Benefits
+
+- **Shared Context**: Team members using different LLMs share the same project understanding
+- **Onboarding**: New developers' AI tools instantly understand the project
+- **Consistency**: All AI interactions based on the same factual foundation
+- **Flexibility**: Use your preferred LLM without losing context quality
+
+## Context7 Integration
+
+For enhanced analysis with current best practices:
+
+```bash
+# Recommended for up-to-date patterns
+claude mcp add context7 -- npx -y @upstash/context7-mcp
+```
+
+AIFW works without Context7 but will use training data patterns instead of current documentation.
 
 ## Benefits
 
 - **Always Fresh**: Runs latest version from GitHub via NPX
 - **No Installation**: No global packages, no version conflicts
-- **Extensible**: Ready for future AI platforms
+- **Platform Agnostic**: Works with any LLM or AI development tool
 - **Evidence-Based**: All context derived from actual codebase analysis
 
 ## License
@@ -88,4 +99,4 @@ MIT
 
 ---
 
-Transform your development from explaining context to making decisions while perfectly-informed agents execute flawlessly.
+Transform your development from explaining context to making decisions while perfectly-informed LLMs execute flawlessly.
