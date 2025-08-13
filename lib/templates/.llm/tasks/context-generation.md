@@ -1,301 +1,286 @@
-# Universal Context Generation Methodology
+# Implementation Pattern Generation Methodology
 
-This document provides the complete methodology for generating LLM-optimized context, supporting any template structure through template-agnostic analysis and quality-assured generation.
+This document provides the complete methodology for generating LLM-optimized implementation guidance, focusing on actionable code patterns, examples, and step-by-step development instructions.
 
 ## Core Philosophy
 
-### Universal Principles
-- **Template Agnostic**: Works with any template structure (domain narratives, WHAT/HOW/WHY, custom formats)
-- **Evidence-Based**: Every statement grounded in discoverable codebase analysis
-- **LLM Optimized**: Dense, structured format optimized for AI comprehension and reasoning
-- **Quality Assured**: Integrated quality standards throughout generation process
-- **Enhancement Ready**: Seamless integration with available tools (Context7, etc.)
+### Implementation-First Principles
+- **Actionable Over Descriptive**: Generate "how to build X" guidance instead of "what X does" descriptions
+- **Code Examples Over Explanations**: Provide concrete, working code patterns from actual codebase
+- **Template-Agnostic**: Works with any implementation pattern template structure
+- **Evidence-Based**: Every pattern grounded in actual codebase analysis
+- **LLM Optimized**: Structured for AI to generate working, production-ready code
+- **Quality Assured**: Integrated standards for implementation guidance
 
 ### Generation Process Overview
-1. **Template Analysis**: Read and understand any template structure
-2. **Content Classification**: Identify what type of content each section needs
-3. **Evidence Gathering**: Apply appropriate codebase analysis methodology
-4. **Quality Integration**: Apply standards throughout generation
+1. **Pattern Template Analysis**: Read and understand implementation pattern templates
+2. **Codebase Pattern Discovery**: Extract actual implementation patterns from project
+3. **Implementation Guide Creation**: Build step-by-step development guidance
+4. **Code Example Integration**: Include working code examples and boilerplate
 5. **Enhancement Integration**: Use available tools for current best practices
 
-## Universal Generation Workflow
+## Implementation Pattern Generation Workflow
 
-### Step 1: Template Analysis and Classification
-**Template-Agnostic Approach**: Works with any template structure
+### Step 1: Pattern Template Analysis
+**Implementation-Focused Approach**: Works with implementation pattern templates
 
 #### Template Structure Discovery
-1. **Read template file**: Scan `.llm/templates/` directory to identify available templates
-2. **Understand sections**: Identify what each template section requires
-3. **Classify content type**: Determine if sections need facts, implementation, rationale, or mixed content
-4. **Map to analysis**: Connect template requirements to appropriate codebase analysis methods
+1. **Read pattern template**: Scan `.llm/templates/` directory to identify available implementation patterns
+2. **Understand pattern sections**: Identify what implementation guidance each template section requires
+3. **Map to pattern discovery**: Connect template requirements to codebase pattern analysis methods
 
-#### Content Type Classification
-- **Facts/Current State (WHAT)**: Technology versions, current configuration, project status
-- **Implementation/Process (HOW)**: Code organization, development practices, workflows
-- **Rationale/Decisions (WHY)**: Technology choices, architectural reasoning, trade-offs
-- **Domain Narratives**: Complete stories spanning technical, business, and user aspects
-- **Hybrid Content**: Mixed content types within single template
+#### Implementation Pattern Categories
+- **component-patterns**: React/Vue components, hooks, UI implementation patterns
+- **api-patterns**: Backend endpoints, middleware, database operation patterns
+- **data-patterns**: Database schemas, queries, state management patterns
+- **style-patterns**: CSS frameworks, component styling, responsive design patterns
+- **integration-patterns**: External APIs, auth providers, third-party service patterns
 
-### Step 2: Quality-Assured Analysis Preparation
+### Step 2: Quality-Assured Pattern Discovery
 #### Enhancement Tool Detection
 - Check for available enhancement tools (Context7, documentation APIs)
 - Test tool accessibility and functionality
 - Prepare fallback methodology for unavailable tools
 
-#### Evidence Standards Setup
-- **Version Specificity**: All technologies must include exact version numbers
-- **Source Attribution**: Claims must reference specific files or analysis results
-- **Current Accuracy**: Information must reflect actual project state, not assumptions
-- **Boundary Compliance**: Content must stay within template scope
+#### Implementation Evidence Standards
+- **Code Completeness**: All patterns must include complete, working code examples
+- **File Path References**: Reference specific files and line numbers from actual codebase
+- **Dependency Accuracy**: Include exact package versions and import patterns
+- **Pattern Completeness**: Show full implementation including imports, types, and integration
 
-### Step 3: Targeted Analysis Execution
-Apply methodology from codebase analysis, targeted to content classification:
+### Step 3: Pattern Discovery and Extraction
+Apply codebase analysis methodology to extract implementation patterns:
 
-#### For Facts/Current State Content (WHAT)
-**Analysis Focus**: Current project reality and technology facts
-- **Technology Stack**: Package management analysis for exact versions
-- **Environment Configuration**: Development setup, deployment configuration
-- **Current State**: Project phase inference from git/version analysis
-- **External Integrations**: Service connections with evidence
-- **Constraints**: Only factual constraints discoverable from code/config
-
-**Quality Standards**:
-- All version numbers verified from package files
-- No explanations of WHY technologies were chosen
-- No implementation details (belongs in HOW content)
-- Current state reflects actual project analysis
-
-#### For Implementation/Process Content (HOW)
-**Analysis Focus**: Code organization and development practices
-- **Directory Structure**: Real file system analysis with counts
-- **Code Organization**: Import patterns, naming conventions, co-location strategies
-- **Development Workflow**: Scripts from package.json, git hooks, automation
-- **Testing Strategy**: Test frameworks, patterns, coverage from actual configs
-- **Build Process**: Build tools and configuration from actual setup
+#### Component Pattern Discovery
+**Analysis Focus**: How components are actually built and structured
+- **Component Architecture**: File organization, naming conventions, export patterns
+- **Props and Types**: Interface definitions, prop handling, TypeScript usage
+- **Styling Patterns**: CSS approaches, variant handling, responsive design
+- **Hook Usage**: State management, side effects, custom hook patterns
+- **Event Handling**: User interaction patterns, form handling, validation
+- **Testing Patterns**: Component testing approaches and examples
 
 **Quality Standards**:
-- Directory structure matches actual project
-- File counts and patterns verified through analysis
-- No technology lists without implementation context
-- Development workflow based on discovered scripts/configs
-- No explanations of WHY patterns were chosen
+- Include complete component implementations with all imports
+- Show actual file structure and organization
+- Provide variant and styling examples
+- Include testing patterns for each component type
 
-#### For Rationale/Decisions Content (WHY)
-**Analysis Focus**: Technology choices and architectural reasoning
-- **Decision Structure**: Decision/Why/Alternatives/Trade-offs format
-- **Technology Choices**: Infer rationale from architecture, commit messages
-- **Constraint Analysis**: Business/team/technical constraints from codebase evidence
-- **Trade-off Documentation**: Visible compromises and their reasoning
-- **Enhancement Integration**: Context7 insights for current alternatives
+#### API Pattern Discovery
+**Analysis Focus**: How APIs are implemented and consumed
+- **Route Structure**: File organization, HTTP method handling, middleware
+- **Request/Response**: Data validation, transformation, error handling
+- **Database Integration**: Query patterns, transaction handling, ORM usage
+- **Authentication**: Auth middleware, permission checking, token handling
+- **Client-Side API**: HTTP client setup, error handling, state management
+- **Testing Patterns**: API testing approaches and examples
 
 **Quality Standards**:
-- Decisions follow structured format (Decision/Why/Alternatives/Trade-offs)
-- Rationale inferred from discoverable evidence
-- No current state facts (belongs in WHAT content)
-- No implementation details (belongs in HOW content)
+- Include complete API route implementations
+- Show middleware usage and configuration
+- Provide client-side integration examples
+- Include comprehensive error handling patterns
 
-#### For Domain Narrative Content (Complete Stories)
-**Analysis Focus**: Complete domain capability stories
+#### Data Pattern Discovery
+**Analysis Focus**: How data is structured and managed
+- **Database Schemas**: Model definitions, relationships, constraints
+- **Query Patterns**: CRUD operations, complex queries, performance optimization
+- **Validation**: Schema validation, input sanitization, error handling
+- **State Management**: Local and global state patterns, persistence
+- **Caching**: Implementation patterns, cache invalidation, performance
+- **Testing Patterns**: Data testing approaches and examples
 
-**Authentication Domain**:
-- Technical Implementation, User Flows, Security Policies, Integration Patterns
-- Business Rules, Performance & Reliability, Future Plans
+**Quality Standards**:
+- Include complete schema definitions and relationships
+- Show actual query implementations with error handling
+- Provide state management examples with real usage
+- Include migration and seeding patterns
 
-**Data Management Domain**:
-- Technical Architecture, Data Models, Access Patterns, Security & Privacy
-- Integration Points, Performance, Future Plans
+#### Style Pattern Discovery
+**Analysis Focus**: How styling is implemented and organized
+- **CSS Framework Setup**: Configuration, theme definitions, utility usage
+- **Component Styling**: Styling approaches, variant systems, responsive design
+- **Layout Patterns**: Grid systems, container patterns, spacing
+- **Animation**: Implementation patterns, performance considerations
+- **Theme Management**: Dark mode, customization, CSS variables
+- **Testing Patterns**: Visual testing, style validation
 
-**User Experience Domain**:
-- Technical Architecture, User Interface, User Flows, Performance
-- Development Experience, Integration, Future Plans
+**Quality Standards**:
+- Include complete styling system setup
+- Show component styling with all variants
+- Provide responsive design examples
+- Include theme and customization patterns
 
-**Integrations Domain**:
-- Technical Implementation, Service Integration, Security & Reliability
-- Data Exchange, Performance, Development, Future Plans
+#### Integration Pattern Discovery
+**Analysis Focus**: How external services are integrated
+- **Authentication Providers**: Setup, configuration, callback handling
+- **Payment Systems**: Implementation, webhook handling, error management
+- **File Storage**: Upload patterns, security, performance optimization
+- **Email Services**: Template management, delivery, error handling
+- **Analytics**: Event tracking, conversion measurement, privacy
+- **Testing Patterns**: Integration testing, mocking, environment handling
 
-**Business Logic Domain**:
-- Domain Model, Business Processes, Implementation, Integration
-- Configuration, Analytics, Future Plans
+**Quality Standards**:
+- Include complete service integration setup
+- Show configuration and environment management
+- Provide error handling and fallback patterns
+- Include testing strategies for external dependencies
 
-**Operations Domain**:
-- Environment Management, Service Setup, Health Checks, Deployment Strategies
-- Backup & Recovery, Troubleshooting, Security & Compliance, Metrics
-
-**Quality Standards for Domain Narratives**:
-- Complete story from technical implementation to business value
-- Cross-cutting concerns captured within domain context
-- Integration points between domains clearly documented
-- Evidence-based content throughout narrative
-
-#### For Hybrid Content Templates
-**Section-Based Approach**:
-- Analyze each section independently
-- Apply appropriate content type methodology per section
-- Maintain clear boundaries within template
-- Use section headers to indicate content type shifts
-
-### Step 4: Quality-Assured Enhancement Integration
+### Step 4: Implementation Guide Creation
 #### Context7 Available
 When Context7 MCP tools are accessible:
 
 **Usage Requirements**:
-- Query Context7 for technologies discovered in codebase analysis
-- Cross-reference patterns with current framework documentation
-- Validate that discovered approaches are still recommended
+- Query Context7 for technologies discovered in pattern analysis
+- Cross-reference implementation patterns with current best practices
+- Validate that discovered patterns align with current framework recommendations
 - Include modern alternatives for any deprecated patterns found
 
 **Quality Indicators**:
-- Header includes: "*Analysis enhanced with Context7 current documentation*"
-- Decision rationale includes current architectural recommendations
-- Pattern analysis notes modern vs legacy approaches
+- Header includes: "*Implementation patterns enhanced with Context7 current documentation*"
+- Pattern examples include current best practice notes
+- Alternative implementation approaches noted where relevant
 - Technology versions validated against current support status
 
 #### Context7 Unavailable
 When Context7 MCP tools are not accessible:
 
 **Fallback Standards**:
-- Rely on codebase analysis and built-in training knowledge
-- Focus on patterns actually observed in the codebase
+- Rely on codebase pattern analysis and built-in training knowledge
+- Focus on implementation patterns actually observed in the codebase
 - Include limitations disclaimer in output
-- Avoid speculation about current best practices
+- Conservative recommendations based on stable, proven patterns
 
 **Quality Indicators**:
-- Header includes: "*Analysis based on codebase discovery + training data*"
+- Header includes: "*Implementation patterns based on codebase discovery + training data*"
 - Explicit focus on observed patterns rather than assumed best practices
-- Conservative recommendations based on stable, well-established practices
+- Conservative recommendations based on stable, well-established patterns
 
-### Step 5: Quality-Assured Content Generation
-#### LLM Optimization Standards
-- **Information Density**: Dense, factual content optimized for LLM consumption
-- **Evidence Integration**: Include specific evidence for every claim (file paths, version numbers)
-- **Parsing Optimization**: Use bullet points over prose for better parsing
-- **Project Specificity**: Focus on current project reality, not generic examples
+### Step 5: Implementation Guide Assembly
+#### LLM Optimization for Implementation
+- **Code-First Content**: Lead with working code examples, follow with explanation
+- **Complete Examples**: Include all imports, types, and integration code
+- **Step-by-Step Instructions**: Provide actionable implementation steps
+- **Integration Guidance**: Show how patterns connect with other system parts
 
-#### Content Quality Requirements
-- **No Placeholder Content**: All content must be project-specific
-- **Version Specificity**: All technologies include exact version numbers
-- **Boundary Compliance**: Content stays within identified template scope
-- **Evidence Grounding**: Every claim supported by discoverable analysis
+#### Implementation Guide Quality Requirements
+- **Working Code Examples**: All patterns must include complete, testable implementations
+- **File Structure Clarity**: Show exact file organization and naming conventions
+- **Dependency Specificity**: Include exact package versions and configuration
+- **Integration Completeness**: Show how patterns integrate with existing codebase
 
-## Integrated Quality Standards
+## Implementation Pattern Quality Standards
 
-### Information Density Standards
-- **Good**: "React 18.2.0, TypeScript 5.2.1, Vite 4.5.0"
-- **Bad**: "The project utilizes React along with TypeScript and uses Vite as the build tool"
+### Code Example Standards
+- **Good**: Complete component with imports, types, and usage example
+- **Bad**: Code snippet without context or imports
 
-### Evidence-Based Standards
-- **Good**: "Jest 29.1.0 with React Testing Library 13.4.0 (package.json:devDependencies)"
-- **Bad**: "Uses Jest for testing"
+### Implementation Specificity Standards
+- **Good**: "Button component using cva for variants, Tailwind for styling, with size='sm'|'md'|'lg' props (src/components/ui/Button.tsx:15)"
+- **Bad**: "Button component with variants"
 
-### Specificity Standards
-- **Good**: "Components in src/components/ with co-located tests in __tests__ folders (15 components analyzed)"
-- **Bad**: "Components are organized in a structured way"
+### Pattern Completeness Standards
+- **Good**: Full implementation including setup, usage, testing, and common variations
+- **Bad**: Single code example without context or integration guidance
 
-### Current Information Standards
-- Always use actual project data, never placeholders
-- Include version numbers from actual package files
-- Reference real directory structures and file counts
-- Quote actual configuration values
+### Project Integration Standards
+- Always show how patterns integrate with actual project structure
+- Include real file paths and import statements
+- Reference actual dependency configurations and versions
+- Show connection points with other patterns
 
-### Template Boundary Standards
-- **Facts Content**: No WHY explanations, no HOW implementations
-- **Implementation Content**: No WHY rationale, no WHAT technology lists without context
-- **Rationale Content**: No WHAT current state facts, no HOW implementation details
-- **Domain Narratives**: Complete stories with clear domain boundaries
+### Implementation Guide Boundaries
+- **Component Patterns**: UI components, hooks, interaction patterns, styling
+- **API Patterns**: Backend routes, middleware, database operations, authentication
+- **Data Patterns**: Database schemas, queries, validation, state management
+- **Style Patterns**: CSS frameworks, component styling, responsive design
+- **Integration Patterns**: External services, authentication providers, third-party APIs
 
-### Common Quality Issues and Fixes
-#### Generic Content Issue
-- **Problem**: Content could apply to any project
-- **Fix**: Replace with project-specific analysis results
-- **Example**: "Modern React application" → "E-commerce platform with 47 product components, Stripe integration"
+### Common Implementation Issues and Fixes
+#### Incomplete Code Examples
+- **Problem**: Code snippets without imports or types
+- **Fix**: Provide complete, executable examples with all dependencies
+- **Example**: `<Button>Click me</Button>` → Complete Button component with interface, styling, and usage
 
-#### Missing Version Specificity
-- **Problem**: Technologies listed without versions
-- **Fix**: Extract exact versions from package files
-- **Example**: "Uses React and TypeScript" → "React 18.2.0, TypeScript 5.2.1"
+#### Missing Integration Context
+- **Problem**: Patterns shown in isolation without showing how they connect
+- **Fix**: Include integration examples and connection points
+- **Example**: API route without showing how frontend calls it → Include both backend route and frontend usage
 
-#### Boundary Violations
-- **Problem**: WHY content in WHAT templates, etc.
-- **Fix**: Move content to appropriate template type
-- **Example**: Technology choices explained in facts content → move to rationale content
+#### Generic Implementation Guidance
+- **Problem**: Could apply to any project of same type
+- **Fix**: Ground in actual project patterns and specific implementation details
+- **Example**: "Create a button component" → "Create Button component following project's cva pattern with primary/secondary variants"
 
-## Template-Agnostic Flexibility
+## Pattern Template Flexibility
 
 ### Template Evolution Handling
-#### Adding New Templates
-When new templates are introduced:
-1. **Read new template**: Understand its focus and required sections
-2. **Identify content type**: Determine if it needs facts, process, rationale, or hybrid
-3. **Map analysis methods**: Choose appropriate codebase analysis techniques
-4. **Apply quality standards**: Use existing quality metrics for new content type
+#### Adding New Pattern Templates
+When new implementation pattern templates are introduced:
+1. **Read pattern template**: Understand its implementation focus and required sections
+2. **Map to pattern discovery**: Connect template sections to codebase pattern analysis methods
+3. **Apply pattern extraction**: Use existing pattern discovery techniques for new template type
+4. **Maintain implementation focus**: Ensure new templates prioritize actionable guidance
 
-#### Modifying Existing Templates
-When current templates change structure:
-1. **Identify changes**: Compare new template against current methodology
-2. **Adjust analysis scope**: Modify codebase analysis to match new requirements
-3. **Update content focus**: Shift content generation to new structure
-4. **Maintain quality**: Apply same quality standards to new format
+#### Modifying Existing Pattern Templates
+When current pattern templates change structure:
+1. **Identify pattern changes**: Compare new template against current implementation methodology
+2. **Adjust pattern scope**: Modify pattern discovery to match new requirements
+3. **Update implementation focus**: Shift pattern generation to new structure
+4. **Maintain quality**: Apply same implementation quality standards to new format
 
-#### Template Consolidation or Splitting
-- **Consolidation**: Combine analysis from multiple templates while maintaining boundaries
-- **Splitting**: Divide content according to new boundaries without gaps
-- **Backward Compatibility**: Support both old and new formats during transition
+#### Pattern Template Consolidation or Splitting
+- **Consolidation**: Combine pattern analysis from multiple templates while maintaining clear boundaries
+- **Splitting**: Divide pattern content according to new boundaries without gaps
+- **Backward Compatibility**: Support both old and new pattern formats during transition
 
-### Universal Section Mapping
-#### Technology/Stack Sections
-- **Analysis Method**: Package management and configuration analysis
-- **Content Type**: Current technology facts with versions
-- **Enhancement**: Context7 validation of technology currency
+### Implementation Pattern Section Mapping
+#### Component Pattern Sections
+- **Analysis Method**: Component file analysis, hook usage discovery, styling pattern extraction
+- **Content Type**: Complete component implementations with variants and usage examples
+- **Enhancement**: Context7 validation of current component patterns and best practices
 
-#### Organization/Structure Sections
-- **Analysis Method**: Directory and file pattern analysis
-- **Content Type**: Actual project organization with evidence
-- **Enhancement**: Modern organizational pattern recommendations
+#### API Pattern Sections
+- **Analysis Method**: Route file analysis, middleware discovery, database query pattern extraction
+- **Content Type**: Complete API implementations with error handling and client integration
+- **Enhancement**: Modern API pattern recommendations and security best practices
 
-#### Decision/Choice Sections
-- **Analysis Method**: Architecture inference and constraint discovery
-- **Content Type**: Rationale with Decision/Why/Alternatives/Trade-offs structure
-- **Enhancement**: Context7 current architectural recommendations
+#### Data Pattern Sections
+- **Analysis Method**: Schema analysis, query pattern discovery, state management extraction
+- **Content Type**: Complete data implementations with validation and performance patterns
+- **Enhancement**: Current database and state management best practices
 
-#### Process/Workflow Sections
-- **Analysis Method**: Script and configuration analysis
-- **Content Type**: Development practices from discovered tools/configs
-- **Enhancement**: Modern workflow pattern validation
+#### Style Pattern Sections
+- **Analysis Method**: CSS framework analysis, component styling discovery, responsive pattern extraction
+- **Content Type**: Complete styling implementations with variants and responsive design
+- **Enhancement**: Modern CSS and styling framework recommendations
 
-### Domain Narrative Construction (When Applicable)
+#### Integration Pattern Sections
+- **Analysis Method**: External service analysis, authentication discovery, webhook pattern extraction
+- **Content Type**: Complete integration implementations with error handling and security
+- **Enhancement**: Current integration patterns and security best practices
 
-#### Narrative Structure Principles
-- **Complete Story Arc**: Current implementation, business context, user impact, integration patterns, future evolution
-- **Cross-Cutting Concerns**: Security, performance, compliance span across technical and business considerations
-- **Evidence Grounding**: All narrative elements supported by codebase analysis
-- **Future Continuity**: Planned developments, known limitations, evolution roadmap
+#### Implementation Pattern Template Structures
 
-#### Domain-Specific Narrative Structures (When Templates Require Complete Domain Stories)
+**Component Pattern Template Structure**:
+- Component Architecture, Implementation Examples, Styling Patterns
+- Hook Usage, Testing Patterns, Integration Guide
 
-**Authentication Domain Structure**:
-- Current System Overview, Implementation Deep Dive, User Experience
-- Business Integration, Challenges & Evolution
+**API Pattern Template Structure**:
+- Route Structure, Request/Response Handling, Middleware Implementation
+- Database Integration, Error Handling, Testing Patterns
 
-**Data Management Domain Structure**:
-- Data Architecture Story, Technical Implementation, Business Data Rules
-- Integration Patterns, Scaling & Evolution
+**Data Pattern Template Structure**:
+- Schema Definitions, Query Patterns, Validation Implementation
+- State Management, Caching Strategies, Testing Patterns
 
-**User Experience Domain Structure**:
-- Interface Architecture, User Journey Mapping, Technical Implementation
-- Development Process, Future Experience Vision
+**Style Pattern Template Structure**:
+- Framework Setup, Component Styling, Layout Patterns
+- Responsive Design, Theme Management, Testing Patterns
 
-**Integrations Domain Structure**:
-- Integration Ecosystem, Technical Patterns, Business Value
-- Reliability & Performance, Integration Roadmap
-
-**Business Logic Domain Structure**:
-- Domain Model Story, Process Implementation, Rule Engine
-- Business Intelligence, Business Evolution
-
-**Operations Domain Structure**:
-- Environment Management, Service Setup, Health Checks
-- Deployment Strategies, Backup & Recovery, Troubleshooting
-- Security & Compliance, Metrics & KPIs
+**Integration Pattern Template Structure**:
+- Service Setup, Authentication Patterns, Error Handling
+- Webhook Implementation, Security Patterns, Testing Patterns
 
 ## Quality Assurance
 
@@ -387,8 +372,25 @@ Any LLM can:
 4. Use enhancement tools when available, fallback gracefully when not
 
 ### Methodology Stability
-Regardless of template evolution:
-- Core analysis methods remain stable
-- Quality standards adapt to new content types
-- Enhancement integration scales with any template
-- Evidence-based approach persists across all formats
+Regardless of pattern template evolution:
+- Core pattern discovery methods remain stable
+- Implementation quality standards adapt to new pattern types
+- Enhancement integration scales with any implementation pattern
+- Code-first, evidence-based approach persists across all pattern formats
+- Focus on actionable implementation guidance remains constant
+
+## Implementation Success Criteria
+
+### Generated Implementation Guides Should Enable
+1. **Immediate Development**: LLMs can generate working code using the patterns
+2. **Consistent Architecture**: New features follow established project patterns
+3. **Complete Integration**: Generated code integrates seamlessly with existing codebase
+4. **Production Ready**: Generated code includes error handling, testing, and best practices
+5. **Maintainable**: Generated code follows project conventions and quality standards
+
+### Validation Questions for Implementation Guides
+- Can an LLM generate a working component using this pattern guide?
+- Does the guide show how to integrate with other project patterns?
+- Are all necessary imports, types, and dependencies included?
+- Does the guide include testing patterns and error handling?
+- Would the generated code pass the project's quality standards?
