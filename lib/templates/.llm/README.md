@@ -1,264 +1,252 @@
-# AIFW Project Reference Guide
+# AIFW Knowledge Gap Patcher
 
-**Your local guide to LLM-optimized development**
+**AI Framework for Workflows - Pure Discovery Approach**
 
-This framework creates documentation designed for AI consumption. Dense, structured, machine-readable format optimized for perfect LLM comprehension.
+This framework identifies and patches specific knowledge gaps in LLM understanding through targeted codebase analysis and Context7 integration. No templates, no static documentation - just smart gap identification.
 
 ## Quick Start
 
 ### For Any LLM
 ```
-"Generate comprehensive project context using AIFW templates in .llm/templates/"
-"Read methodology from .llm/tasks/ for analysis approach"
-"Output context files to .llm/context/ folder"
+"Apply gap identification methodology from .llm/tasks/gap-identification.md"
+"Use Context7 integration patterns from .llm/tasks/context7-integration.md when available"
+"Generate minimal knowledge patches for identified gaps only"
 ```
 
-### For Claude Code Users (Enhanced Automation)
+### For Claude Code Users (Enhanced with Context7)
 ```bash
-@aifw-meta generate comprehensive project context
+@aifw-meta identify and patch knowledge gaps
 ```
 
-### Manual Context Generation
-1. Read methodology from `.llm/tasks/` folder
-2. Analyze your codebase following the guidelines
-3. Use templates in `.llm/templates/` for structure
-4. Generate context files in `.llm/context/`
+### Manual Gap Analysis
+1. Read gap identification methodology from `.llm/tasks/gap-identification.md`
+2. Apply codebase analysis from `.llm/tasks/codebase-analysis.md`
+3. Use Context7 integration when available
+4. Generate targeted knowledge patches only
 
 ## Framework Structure
 
 ```
 .llm/
-├── README.md              # This reference guide
+├── README.md              # This guide
 ├── tasks/                 # Universal methodology (any LLM can read)
-│   ├── codebase-analysis.md    # How to discover project reality
-│   └── context-generation.md   # Complete generation methodology (integrated)
-├── templates/             # Template-agnostic templates (discovered dynamically)
-│   ├── business-logic.md       # Complete business domain story template
-│   ├── data-management.md      # Complete data architecture story template
-│   ├── integrations.md         # Complete external services story template (includes auth)
-│   ├── operations.md           # Complete deployment & operations story template
-│   └── user-experience.md      # Complete user interface story template
-└── context/               # Generated context files (template-agnostic)
-    ├── business-logic.md       # Your project's complete business story
-    ├── data-management.md      # Your project's complete data story
-    ├── integrations.md         # Your project's complete integration story
-    ├── operations.md           # Your project's complete operations story
-    └── user-experience.md      # Your project's complete UX story
+│   ├── gap-identification.md    # How to identify knowledge gaps
+│   ├── context7-integration.md  # Context7 MCP enhancement methodology
+│   ├── codebase-analysis.md     # How to analyze for gap detection
+│   └── context-generation.md    # Core gap patching methodology
+└── context/               # Generated gap patches (as needed)
+    └── [technology]-gaps.md     # Specific knowledge gap patches
 
 .claude/                   # Claude Code automation (optional)
 └── agents/                # Specialized automation agents
     ├── aifw-meta.md       # Coordination and delegation
-    ├── aifw-context-builder.md # Context generation worker
-    └── aifw-agent-builder.md   # Specialized agent creator
+    └── aifw-gap-patcher.md # Knowledge gap detection worker
 ```
 
-## How AIFW Works
+## How AIFW Knowledge Gap Patcher Works
 
-### 1. Universal Methodology
-The `.llm/tasks/` folder contains platform-agnostic instructions that any LLM can follow:
-- **codebase-analysis.md**: How to discover project reality through file analysis
-- **context-generation.md**: Complete integrated methodology (includes quality standards, template flexibility, enhancement integration)
+### 1. Dynamic Technology Discovery
+Instead of predefined templates, the framework discovers technologies in use:
+- **Package Analysis**: Scans package.json, requirements.txt, etc. for versions
+- **Import Pattern Analysis**: Identifies libraries and frameworks actually used
+- **Configuration Discovery**: Finds build tools, linting, styling configurations
+- **Version Gap Detection**: Compares discovered versions with modern patterns
 
-### 2. Template-Agnostic Templates
-The `.llm/templates/` folder provides template structures discovered dynamically by the universal methodology:
-- **Template Discovery**: Methodology scans templates directory to work with any structure
-- **Current Templates**: business-logic.md, data-management.md, integrations.md (includes auth), operations.md, user-experience.md
-- **Template Evolution**: Framework automatically adapts to template changes without breaking
+### 2. Knowledge Gap Identification
+Identifies specific areas where LLM knowledge may be outdated:
+- **Version Gaps**: Newer versions of familiar libraries with breaking changes
+- **API Evolution**: Deprecated patterns still in use
+- **Pattern Modernization**: Better alternatives to current implementations
+- **Configuration Updates**: Modern setup patterns for discovered technologies
 
-### 3. Generated Context Files
-The `.llm/context/` folder contains complete stories about your project's capabilities:
-- Template-agnostic generation works with any template structure
-- Each file tells complete story from technical implementation to business value
-- Cross-cutting concerns captured within relevant context
-- Evidence-based content derived from actual codebase analysis
-- Universal methodology ensures consistent quality across all templates
+### 3. Context7 Enhanced Analysis
+When Context7 MCP is available:
+- **Current Documentation**: Queries latest documentation for discovered technologies
+- **Pattern Validation**: Cross-references codebase patterns with current best practices
+- **Migration Guidance**: Gets specific upgrade paths for identified gaps
+- **Security Updates**: Identifies security improvements in newer versions
+
+### 4. Targeted Knowledge Patches
+Generates minimal, focused patches only for identified gaps:
+```markdown
+## React useEffect Knowledge Gap Patch
+
+**Gap Type**: pattern
+**Technology**: React 18
+**Impact**: enhancement
+
+### Current Pattern (Found in Codebase)
+useEffect(() => { fetchData() }, []) // Missing cleanup
+
+### Updated Pattern (Current Best Practice)  
+useEffect(() => {
+  const controller = new AbortController()
+  fetchData(controller.signal)
+  return () => controller.abort()
+}, [])
+
+### Migration Steps
+1. Add AbortController to data fetching effects
+2. Pass signal to fetch requests
+3. Return cleanup function
+```
 
 ## Common Workflows
 
-### Initial Setup
+### Initial Gap Analysis
 ```bash
-# Already done if you ran: npx jubalm/aifw init
-# Context files will be generated in .llm/context/
+# Automated (Claude Code with Context7)
+@aifw-meta identify and patch knowledge gaps
+
+# Manual (Any LLM)
+"Apply gap identification methodology from .llm/tasks/gap-identification.md to analyze this codebase"
 ```
 
-### Context Generation
-
-#### Automated (Claude Code)
+### Technology-Specific Gap Detection
 ```bash
-@aifw-meta generate comprehensive project context
-# Analyzes project, coordinates parallel generation
-# Creates all context files automatically
+# React patterns
+"Check for React 18 vs React 17 pattern gaps in this codebase"
+
+# Next.js routing
+"Identify Next.js Pages Router vs App Router gaps"
+
+# Tailwind CSS
+"Find Tailwind CSS 2.x vs 3.x configuration gaps"
 ```
 
-#### Manual (Any LLM)
-```
-1. Tell your LLM: "Read .llm/tasks/context-generation.md for complete methodology"
-2. Then: "Apply methodology to generate context for available templates in .llm/templates/"
-3. Methodology handles template discovery, analysis, and generation automatically
-4. Save each generated file to .llm/context/ folder
-```
-
-#### Copy-Paste (Web LLMs)
-For ChatGPT, Gemini, etc.:
-1. Copy content from `.llm/tasks/context-generation.md`
-2. Paste with: "Apply this methodology to analyze my project and generate context"
-3. Methodology includes template discovery, so it will work with any template structure
-4. Save responses to appropriate `.llm/context/` files
-5. Methodology handles quality standards and template flexibility automatically
-
-### Using Generated Context
-
-#### With Any LLM
-```
-"Read the project context from .llm/context/ folder"
-"Generate code following the patterns documented there"
-"Make decisions consistent with the documented approach"
-```
-
-#### For Development Tasks
-```
-"Based on context files in .llm/context/, implement [specific feature]"
-"Using .llm/context/data-management.md, create a new data model following our patterns"
-"According to .llm/context/user-experience.md, build a component that matches our design system"
-"From .llm/context/integrations.md, add integration following our established patterns"
-"Using .llm/context/business-logic.md, implement workflow validation rules"
-"Following .llm/context/operations.md, set up deployment pipeline"
-```
-
-### Context Updates
-
-#### When to Update
-- New frameworks or major dependencies added
-- Architecture or pattern changes
-- Team workflow modifications
-- Major feature additions that change project structure
-
-#### How to Update
-**Automated**: Re-run `@aifw-meta generate comprehensive project context`
-**Manual**: Re-analyze changed areas and update relevant context files
-
-## Enhancement: Context7 Integration
-
-### Recommended Setup
+### Using Gap Patches
 ```bash
-# For enhanced analysis with current best practices
+# Development with gap awareness
+"Based on identified gaps in .llm/context/, implement [feature] using current best practices"
+
+# Pattern updates
+"Apply the React useEffect gap patch to update this component"
+
+# Migration planning
+"Using identified gaps, create migration plan for Next.js App Router"
+```
+
+## Gap Categories
+
+### Priority 1: Breaking Changes
+- API deprecations and removals
+- Major version differences affecting functionality
+- Security vulnerabilities in current patterns
+- Performance critical updates
+
+### Priority 2: Enhancement Opportunities
+- New features that improve existing patterns
+- Performance optimizations available
+- Developer experience improvements
+- Modern alternatives to current approaches
+
+### Priority 3: Best Practice Evolution
+- Style guide updates
+- Configuration improvements
+- Testing pattern modernization
+- Tooling updates
+
+## Context7 Integration
+
+### Setup (Recommended)
+```bash
+# Enhanced analysis with current documentation
 claude mcp add context7 -- npx -y @upstash/context7-mcp
 ```
 
 ### Benefits When Available
-- **Current Standards**: Analysis enhanced with up-to-date documentation
-- **Pattern Validation**: Cross-reference code patterns with latest framework versions
-- **Modern Alternatives**: Recommendations for outdated approaches discovered
+- **Current Information**: Real-time access to latest documentation
+- **Pattern Validation**: Verify discovered patterns against current recommendations  
+- **Migration Guidance**: Get specific upgrade paths from official docs
+- **Security Updates**: Latest security best practices
 
-### Graceful Degradation
-AIFW works perfectly without Context7:
-- Uses codebase analysis + built-in training knowledge
-- Generated files note: "*Analysis based on codebase discovery + training data*"
-- Focus on patterns actually observed in codebase
+### Graceful Fallback
+Works perfectly without Context7:
+- Uses training data knowledge for gap identification
+- Conservative recommendations based on proven patterns
+- Notes: "*Gap analysis based on training data (no external verification)*"
+- Focus on patterns that can be confidently identified as outdated
 
-## Quality Assurance
+## Quality Standards
 
-### Context Validation Checklist
-- [ ] Each context file tells a complete story from implementation to business value
-- [ ] All technical claims supported by codebase analysis
-- [ ] Cross-cutting concerns captured within relevant context
-- [ ] Integration points between contexts clearly documented
-- [ ] No duplicate information across context files
-- [ ] Universal methodology applied consistently
+### Effective Gap Patching
+- **Targeted**: Addresses specific knowledge limitations only
+- **Current**: Uses latest available information when possible
+- **Minimal**: Reduces context pollution and information overload
+- **Actionable**: Provides concrete steps to address identified gaps
+- **Integrated**: Shows how updates fit with existing codebase patterns
 
-### Common Issues and Fixes
+### Gap Identification Accuracy
+- **Specific**: Target exact knowledge gaps, not general concepts
+- **Relevant**: Focus on gaps that impact the specific project
+- **Validated**: Use Context7 when available for verification
+- **Conservative**: Avoid false positives when uncertain
 
-#### Incomplete Context Stories
-**Problem**: Context file missing key aspects (technical, business, or user impact)
-**Fix**: Re-apply universal methodology for complete analysis
-**Example**: Integration context missing auth flows → apply methodology to capture complete integration story including authentication
+## Framework Evolution
 
-#### Cross-Context Content Duplication
-**Problem**: Same information appearing in multiple context files
-**Fix**: Assign ownership to most relevant context, reference from others
-**Example**: Database security appears in both data-management.md and integrations.md → own in data-management, reference in integrations
+### No Static Templates
+Instead of maintaining comprehensive templates that become outdated:
+- **Dynamic Discovery**: Identifies what's actually in use
+- **Targeted Updates**: Patches only identified knowledge gaps
+- **Self-Updating**: Context7 integration provides current information
+- **Minimal Footprint**: Reduces context pollution
 
-#### Generic Context Content
-**Problem**: Context file could apply to any project in same category
-**Fix**: Ground in specific codebase analysis and project evidence using universal methodology
-**Example**: "Standard OAuth flow" → "Google OAuth with NextAuth.js 4.24.5, custom callback handling in /api/auth/[...nextauth].js"
-
-## Team Collaboration
-
-### Shared Context Benefits
-- **Universal Understanding**: All team members' LLMs understand the project identically
-- **Onboarding Efficiency**: New developers' AI tools instantly grasp project context
-- **Consistency**: All AI interactions based on same factual foundation
-- **Platform Flexibility**: Use any LLM without losing context quality
-
-### Mixed Team Scenarios
-- **Claude Code users**: Get automated context generation and specialized agents
-- **Other AI tools**: Use manual process with same methodology and templates
-- **Traditional developers**: Can read context files for project understanding
-
-### Context Maintenance
-- Designate team member for context updates
-- Include context updates in major feature planning
-- Review context files during architecture reviews
-- Update templates as project patterns evolve
+### Advantages Over Template Approach
+- **Always Current**: Context7 provides latest best practices
+- **Project-Specific**: Only addresses actual gaps in the codebase
+- **Lightweight**: Minimal context instead of comprehensive documentation
+- **Adaptable**: Works with any technology stack without predefined templates
 
 ## Troubleshooting
 
-### Context Generation Issues
-**Empty or generic output**: LLM didn't follow methodology → provide clearer instructions
-**Missing versions**: LLM didn't analyze package files → specify file analysis requirements
-**Wrong focus**: Content in wrong template → clarify template boundaries (WHAT/HOW/WHY)
+### Gap Detection Issues
+**No gaps identified**: May indicate very current codebase or conservative analysis
+**Too many gaps**: Prioritize by impact (breaking > enhancement > style)
+**False positives**: Verify with Context7 or use conservative fallback
 
-### Enhancement Tool Issues
-**Context7 not working**: Check MCP installation and Claude Code configuration
-**Outdated recommendations**: Context7 may need library ID resolution
-**No enhancement available**: Framework works fine with codebase analysis only
+### Context7 Issues
+**Context7 not available**: Framework works fine with training data analysis
+**Outdated Context7 responses**: Technology documentation may be evolving rapidly
+**Rate limiting**: Use batch queries and caching strategies
 
-### Template Evolution
-**Template Changes**: Universal methodology automatically adapts to template changes
-**New Templates**: Add templates to `.llm/templates/` - methodology discovers and handles them
-**Template Structure Changes**: Methodology's template-agnostic design handles evolution gracefully
-**Framework Updates**: Core methodology remains stable across framework evolution
+### Integration Issues
+**Gap patches don't apply**: Verify codebase analysis accuracy
+**Conflicting recommendations**: Prioritize by project-specific context
+**Migration complexity**: Break down large gaps into smaller, manageable steps
 
 ## Advanced Usage
 
-### Template Customization
-- Modify `.llm/templates/` files for project-specific needs
-- Add new templates for specialized context (API docs, deployment, etc.)
-- Universal methodology automatically adapts to template changes
-- Template-agnostic design in `.llm/tasks/context-generation.md` handles any structure
+### Custom Gap Detection
+- Modify gap identification methodology for specific technology focuses
+- Add domain-specific knowledge gap categories
+- Integrate with project-specific linting or analysis tools
 
-### Integration with Other Tools
-- **Documentation generators**: Use context files as input for human docs
-- **Linting/formatting**: Include context validation in CI/CD
-- **Project scaffolding**: Use context to generate consistent project structures
+### Automation Integration
+- **CI/CD Integration**: Run gap analysis on dependency updates
+- **Pull Request Checks**: Identify knowledge gaps in code changes
+- **Documentation Updates**: Generate gap patches for team knowledge sharing
 
-### Platform-Specific Automation
-- **Claude Code**: Full automation with task-referential agents
-- **Any LLM**: Direct application of universal methodology
-- **Future Platforms**: Universal methodology supports any AI development environment
+### Platform-Specific Enhancement
+- **Claude Code**: Full automation with Context7 integration
+- **Other LLMs**: Manual application of gap identification methodology
+- **Future Tools**: Universal methodology supports any AI development environment
 
-## Framework Philosophy
+## Success Metrics
 
-### Template-Agnostic Design
-- Universal methodology works with any template structure
-- Complete stories optimized for AI reasoning regardless of template format
-- Cross-cutting concerns captured coherently within appropriate context
-- Evidence-based content grounded in actual project analysis
-- Holistic understanding enabling sophisticated LLM decision-making
+### Effective Knowledge Gap Patching
+1. **Reduced Context Pollution**: Only necessary information provided
+2. **Current Best Practices**: Leverages latest available documentation
+3. **Actionable Improvements**: Clear migration paths for identified gaps
+4. **Project Relevance**: Gaps directly applicable to actual codebase
+5. **Measurable Impact**: Better code generation from LLMs
 
-### Universal Compatibility
-- Works with any LLM or AI development tool
-- Consolidated platform-agnostic methodology in `.llm/tasks/context-generation.md`
-- Task-referential agents for enhanced Claude Code automation
-- Template-agnostic design supports any template evolution
-
-### Future-Proof Architecture
-- Universal methodology handles any template evolution automatically
-- Enhancement tool integration built into consolidated methodology
-- Task-based architecture keeps agents synchronized with methodology evolution
-- Evidence-based approach remains stable regardless of template or framework changes
+### Quality Indicators
+- Gap patches address actual knowledge limitations
+- Recommendations are current and applicable when Context7 available
+- Context footprint is minimal and focused
+- Migration paths are clear and testable
+- Integration maintains project consistency
 
 ---
 
-**Transform your development from explaining context to making decisions while perfectly-informed LLMs execute flawlessly.**
+**Transform comprehensive documentation into targeted knowledge enhancement - providing LLMs exactly what they need to know, when they need to know it.**

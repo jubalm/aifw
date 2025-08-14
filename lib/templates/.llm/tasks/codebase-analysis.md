@@ -1,307 +1,275 @@
-# Codebase Analysis for Implementation Pattern Discovery
+# Codebase Analysis for Knowledge Gap Identification
 
-This document explains how to analyze a codebase to discover implementation patterns, code examples, and concrete development guidance for building features.
+This document explains how to analyze a codebase to identify knowledge gaps between current implementation patterns and modern best practices.
 
-## Implementation-First Analysis Approach
+## Gap-Focused Analysis Approach
 
-- **Extract patterns, not descriptions**: Identify how things are actually implemented, not what they do
-- **Concrete examples**: Find real code patterns, components, and implementations to use as templates
-- **Implementation guidance**: Focus on "how to build X" rather than "what X does"
-- **Actionable patterns**: Every pattern should include executable code examples and step-by-step instructions
+- **Identify knowledge gaps, not create documentation**: Find where current patterns differ from best practices
+- **Version-aware analysis**: Detect when technologies are outdated or deprecated patterns are used
+- **Pattern evolution discovery**: Identify where newer, better patterns are available
+- **Targeted gap identification**: Focus on specific knowledge limitations rather than comprehensive analysis
 
-## Technology Stack & Configuration Discovery
+## Technology Stack & Version Gap Discovery
 
-### Package Management Analysis
-Extract exact implementation details for dependency usage:
-- **package.json**: Dependencies with versions + analyze actual usage in code
-- **requirements.txt**: Python packages + identify import patterns
-- **Cargo.toml**: Rust crates + discover feature usage
-- **go.mod**: Go modules + examine package imports
-- **composer.json**: PHP packages + check namespace usage
+### Package Management Gap Analysis
+Extract dependency versions and identify potential gaps:
+- **package.json**: Dependencies with versions + identify outdated packages
+- **requirements.txt**: Python packages + check for deprecated versions
+- **Cargo.toml**: Rust crates + identify version-specific features
+- **go.mod**: Go modules + check for breaking changes in versions
+- **composer.json**: PHP packages + identify security updates available
 
-### Configuration Implementation Patterns
-Discover how configurations are actually implemented:
-- **tsconfig.json**: Language settings + analyze actual TypeScript usage patterns
-- **tailwind.config.js**: Styling setup + extract component style patterns
-- **eslint.config.js**: Code rules + identify enforced code patterns
-- **prettier.config.js**: Formatting + discover consistent code style
-- **vite/webpack configs**: Build patterns + understand asset handling
+### Configuration Gap Analysis
+Discover configuration patterns that may be outdated:
+- **tsconfig.json**: TypeScript settings + identify new compiler options
+- **tailwind.config.js**: Tailwind setup + check for deprecated patterns
+- **eslint.config.js**: ESLint rules + identify updated rule sets
+- **prettier.config.js**: Prettier config + check for new formatting options
+- **vite/webpack configs**: Build configs + identify performance improvements
 
-## Code Pattern Discovery
+## Code Pattern Gap Discovery
 
-### Component Implementation Patterns
-**Focus**: How components are actually built, not what they do
+### Component Pattern Gap Analysis
+**Focus**: Identify gaps between current patterns and modern best practices
 
-#### React Component Patterns
+#### React Component Gap Detection
 ```bash
-# Discovery commands for React patterns
+# Discovery commands for React gap analysis
 find src -name "*.tsx" -o -name "*.jsx" | head -10
-grep -r "export.*function\|export.*const.*FC\|export.*React.FC" src/components | head -5
-grep -r "interface.*Props" src/components | head -5
+grep -r "useEffect" src/ | head -5  # Check for potential dependency issues
+grep -r "useState" src/ | head -5   # Check for state management patterns
+grep -r "React.FC\|FunctionComponent" src/ | head -5  # Check for deprecated patterns
 ```
 
-**Extract patterns for**:
-- Component structure and naming conventions
-- Props interface patterns
-- Hook usage patterns (useState, useEffect, custom hooks)
-- Styling approach (CSS modules, styled-components, Tailwind classes)
-- Event handling patterns
-- Conditional rendering patterns
-- Error boundary implementations
+**Identify gaps in**:
+- Component patterns (class vs function components)
+- Hook usage (dependency arrays, cleanup patterns)
+- TypeScript usage (prop interfaces, generic patterns)
+- Performance patterns (memo, useMemo, useCallback usage)
+- Modern React patterns (Server Components, Suspense)
+- Styling evolution (CSS-in-JS vs utility classes)
+- Testing approaches (modern testing patterns)
 
-#### Component Variant Patterns
+#### Component Styling Gap Detection
 ```bash
-# Find variant implementations
-grep -r "variant.*=\|variants.*=" src/components
-grep -r "className.*(" src/components | head -5
-grep -r "cva\|clsx\|cn(" src/components | head -5
+# Find styling pattern gaps
+grep -r "styled-components\|emotion" src/ | head -5  # Check for CSS-in-JS usage
+grep -r "className.*=" src/ | head -5              # Check Tailwind usage patterns
+grep -r "@apply\|@screen" src/ | head -5           # Check for deprecated Tailwind patterns
 ```
 
-Extract how components handle variants, styling, and conditional classes.
+**Identify styling gaps**:
+- CSS framework versions (Tailwind 2.x vs 3.x vs 4.x)
+- Deprecated utilities (@apply usage)
+- Performance patterns (CSS-in-JS vs static extraction)
+- Modern CSS features (container queries, cascade layers)
 
-### API Implementation Patterns
-**Focus**: How APIs are actually implemented and called
+### API Pattern Gap Analysis
+**Focus**: Identify gaps in backend and API client patterns
 
-#### Backend API Patterns
+#### Backend API Gap Detection
 ```bash
-# Discover API route patterns
+# Discover API implementation gaps
 find . -name "route.ts" -o -name "*.route.ts" -o -path "*/api/*" -name "*.ts" | head -10
-grep -r "export.*GET\|export.*POST\|export.*PUT\|export.*DELETE" . | head -5
-grep -r "NextRequest\|Request.*Response" . | head -5
+grep -r "getServerSideProps\|getStaticProps" . | head -5  # Check for deprecated Next.js patterns
+grep -r "pages/api" . | head -5                          # Check for Pages Router usage
+grep -r "app.*route\|route.*handler" . | head -5         # Check for App Router adoption
 ```
 
-**Extract patterns for**:
-- Route file structure and organization
-- Request/response handling patterns
-- Middleware usage (auth, validation, error handling)
-- Database query patterns
-- Error response formatting
-- Authentication implementation
-- Input validation schemas
+**Identify API gaps**:
+- Next.js routing (Pages Router vs App Router)
+- Data fetching patterns (getServerSideProps vs Server Components)
+- API route patterns (REST vs modern patterns)
+- Authentication patterns (session vs JWT evolution)
+- Error handling evolution
+- Type safety improvements (tRPC, Prisma types)
 
-#### Frontend API Client Patterns
+#### Frontend API Client Gap Detection
 ```bash
-# Find API client implementations
-grep -r "fetch\|axios\|useSWR\|useQuery" src/ | head -10
-grep -r "async.*=\|await " src/ | head -10
+# Find API client pattern gaps
+grep -r "fetch\|axios" src/ | head -10               # Check HTTP client usage
+grep -r "useSWR\|useQuery\|@tanstack" src/ | head -5 # Check data fetching libraries
+grep -r "\.then\|\.catch" src/ | head -5             # Check for Promise chain patterns
 ```
 
-**Extract patterns for**:
-- HTTP client setup and configuration
-- API call patterns and error handling
-- State management for API data
-- Loading and error states
-- Data transformation patterns
+**Identify client gaps**:
+- HTTP client evolution (fetch vs axios vs modern alternatives)
+- Data fetching (SWR vs React Query vs modern patterns)
+- Error handling patterns
+- Loading state management
+- Caching strategies
 
-### Database & Data Patterns
-**Focus**: How data operations are actually implemented
+### Database & State Management Gap Analysis
 
-#### Database Schema & Query Patterns
+#### Database Pattern Gap Detection
 ```bash
-# Discover database patterns
+# Discover database pattern gaps
 find . -name "schema.prisma" -o -name "*.sql" -o -path "*/migrations/*"
-grep -r "model \|interface.*{" . | grep -v node_modules | head -10
-grep -r "prisma\." src/ | head -10
-grep -r "findMany\|findUnique\|create\|update\|delete" src/ | head -10
+grep -r "findMany\|findFirst" src/ | head -5         # Check Prisma usage patterns
+grep -r "\.query\|\.execute" src/ | head -5          # Check raw query usage
+grep -r "transaction\|$transaction" src/ | head -5   # Check transaction patterns
 ```
 
-**Extract patterns for**:
-- Database schema definitions
-- Model relationships and constraints
-- Query patterns (CRUD operations)
-- Transaction handling
-- Data validation schemas
+**Identify database gaps**:
+- ORM versions (Prisma 4.x vs 5.x patterns)
+- Query optimization patterns
+- Type safety evolution
 - Migration patterns
+- Performance optimizations
 
-#### State Management Patterns
+#### State Management Gap Detection
 ```bash
-# Find state management implementations
-grep -r "useState\|useReducer\|createContext" src/ | head -10
-grep -r "zustand\|redux\|jotai" src/ | head -10
-grep -r "store\|State.*=" src/ | head -5
+# Find state management pattern gaps
+grep -r "useState\|useReducer" src/ | head -10       # Check local state patterns
+grep -r "createContext\|useContext" src/ | head -5   # Check Context usage
+grep -r "zustand\|redux\|jotai\|valtio" src/ | head -5 # Check global state libraries
 ```
 
-**Extract patterns for**:
-- Local state management (useState, useReducer)
-- Global state setup (Context, Zustand, Redux)
-- State update patterns
-- State persistence patterns
+**Identify state gaps**:
+- Global state management evolution
+- Performance patterns (selectors, subscriptions)
+- Persistence patterns
+- Type safety improvements
+- Modern alternatives to current approaches
 
-### Styling Implementation Patterns
-**Focus**: How styling is actually implemented
+### Styling and UI Gap Analysis
 
-#### CSS & Styling Patterns
+#### CSS Framework Gap Detection
 ```bash
-# Discover styling patterns
-find . -name "*.css" -o -name "*.scss" -o -name "*.styled.ts" | head -10
-grep -r "className.*=" src/ | head -10
-grep -r "styled\." src/ | head -5
-grep -r "cn(" src/ | head -5
+# Discover styling framework gaps
+find . -name "tailwind.config.*" -o -name "*.css" | head -10
+grep -r "tailwindcss.*version\|@tailwindcss" . | head -5    # Check Tailwind version
+grep -r "container\|@apply\|@screen" src/ | head -5         # Check deprecated patterns
+grep -r "dark:\|prose\|forms" src/ | head -5               # Check plugin usage
 ```
 
-**Extract patterns for**:
-- CSS organization and naming conventions
-- Component styling patterns
-- Responsive design implementations
-- Theme and variant handling
-- Animation patterns
+**Identify styling gaps**:
+- Framework versions (Tailwind CSS 3.x vs 4.x)
+- Plugin usage (forms, typography, container queries)
+- Deprecated patterns (@apply overuse)
+- Performance optimizations (JIT vs static)
+- Modern CSS features (container queries, color functions)
 
-### Form & Validation Patterns
+### Testing Pattern Gap Analysis
+
+#### Testing Framework Gap Detection
 ```bash
-# Find form implementations
-grep -r "useForm\|register\|handleSubmit" src/ | head -10
-grep -r "zod\|yup\|joi" src/ | head -5
-grep -r "onSubmit\|form" src/ | head -10
+# Find testing pattern gaps
+find . -name "*.test.*" -o -name "*.spec.*" | head -10
+grep -r "jest\|vitest\|@testing-library" . | head -5      # Check testing libraries
+grep -r "enzyme\|shallow\|mount" . | head -5              # Check for deprecated patterns
+grep -r "screen\|render\|fireEvent" . | head -5           # Check modern testing patterns
 ```
 
-**Extract patterns for**:
-- Form setup and configuration
-- Validation schema definitions
-- Error handling and display
-- Form submission patterns
+**Identify testing gaps**:
+- Testing framework evolution (Jest vs Vitest)
+- Testing library patterns (Enzyme vs Testing Library)
+- Component testing approaches
+- Integration testing patterns
+- Performance testing
 
-### Authentication & Security Patterns
-```bash
-# Discover auth implementations
-grep -r "useSession\|signIn\|signOut" src/ | head -5
-grep -r "middleware\|auth" src/ | head -10
-grep -r "JWT\|token\|Bearer" src/ | head -5
-```
+## Gap Identification Process
 
-**Extract patterns for**:
-- Authentication setup and flows
-- Protected route implementations
-- Session management
-- Token handling
+### 1. Technology Version Analysis
+Based on discovered patterns, categorize potential gaps:
+- **Version gaps**: Outdated dependency versions
+- **API gaps**: Deprecated or changed APIs in use
+- **Pattern gaps**: Older patterns when modern alternatives exist
+- **Configuration gaps**: Outdated setup or build configurations
 
-### Integration Patterns
-```bash
-# Find external service integrations
-grep -r "stripe\|paypal\|aws\|s3" src/ | head -5
-grep -r "webhook\|api.*key" src/ | head -5
-grep -r "email\|send" src/ | head -5
-```
+### 2. Pattern Evolution Assessment
+For each technology category:
+1. **Identify current usage patterns** from actual codebase
+2. **Check for version-specific features** being used or missing
+3. **Look for deprecated patterns** that should be updated
+4. **Find optimization opportunities** with newer approaches
 
-**Extract patterns for**:
-- Third-party service integration
-- Webhook handling
-- File upload implementations
-- Email service setup
+### 3. Gap Priority Classification
+Transform discovered gaps into priority categories:
+- **High Priority**: Security issues, breaking changes, performance critical
+- **Medium Priority**: Developer experience improvements, modern patterns
+- **Low Priority**: Style preferences, minor optimizations
 
-## Pattern Extraction Process
+### 4. Context7 Integration Points
+Prepare gap analysis for Context7 enhancement:
+- **Technology + version queries**: "React 18 vs React 17 breaking changes"
+- **Pattern-specific queries**: "Next.js 14 app router migration guide"
+- **Performance queries**: "Tailwind CSS 3.4 performance optimizations"
+- **Security queries**: "Node.js 18 vs 16 security improvements"
 
-### 1. Identify Implementation Categories
-Based on discovered patterns, categorize into:
-- **component-patterns**: React/Vue components, hooks, UI patterns
-- **api-patterns**: Backend endpoints, middleware, database operations
-- **data-patterns**: Database schemas, queries, state management
-- **style-patterns**: CSS frameworks, component styling, responsive design
-- **integration-patterns**: External APIs, auth providers, third-party services
+## Gap Analysis Examples
 
-### 2. Extract Code Examples
-For each pattern category:
-1. **Find representative examples** from actual codebase
-2. **Extract complete implementations** (not snippets)
-3. **Include surrounding context** (imports, types, related files)
-4. **Document usage patterns** (when/how to use)
-5. **Add implementation steps** (step-by-step instructions)
-
-### 3. Create Implementation Templates
-Transform discovered patterns into actionable templates:
-- **Boilerplate code** ready to copy/paste
-- **Customization points** clearly marked
-- **Common variations** documented
-- **Integration instructions** with other patterns
-- **Testing patterns** for each implementation
-
-### 4. Document Pattern Relationships
-Show how patterns connect:
-- **Component patterns** → **API patterns** (how components call APIs)
-- **Data patterns** → **API patterns** (how APIs interact with database)
-- **Style patterns** → **Component patterns** (how styling is applied)
-- **Integration patterns** → all others (how external services integrate)
-
-## Implementation Discovery Examples
-
-### Component Pattern Discovery
+### React Pattern Gap Discovery
 ```typescript
-// Found in src/components/ui/Button.tsx
-export interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'destructive'
-  size?: 'sm' | 'md' | 'lg' 
-  children: React.ReactNode
-}
+// Discovered pattern (potentially outdated)
+const MyComponent: React.FC<Props> = ({ data }) => {
+  useEffect(() => {
+    fetchData()
+  }, []) // Missing dependency
 
-export const Button = ({ variant = 'primary', size = 'md', children, ...props }) => {
-  return (
-    <button 
-      className={cn(buttonVariants({ variant, size }))}
-      {...props}
-    >
-      {children}
-    </button>
-  )
+  return <div>{data.map(item => <Item key={item.id} {...item} />)}</div>
 }
 ```
 
-**Extracted Implementation Pattern**:
-- Interface-first prop definitions
-- Default parameter values
-- Variant-based styling with cn() utility
-- Props spreading for HTML attributes
-- Named exports over default exports
+**Identified Gaps**:
+- React.FC usage (deprecated pattern)
+- useEffect missing dependencies
+- No error boundaries
+- Missing loading states
 
-### API Pattern Discovery
+### Next.js Routing Gap
 ```typescript
-// Found in src/app/api/users/route.ts
-export async function GET(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url)
-    const page = parseInt(searchParams.get('page') || '1')
-    
-    const users = await prisma.user.findMany({
-      skip: (page - 1) * 10,
-      take: 10,
-      select: { id: true, name: true, email: true }
-    })
-    
-    return NextResponse.json({ data: users })
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch users' }, { status: 500 })
-  }
+// Discovered: Pages Router pattern
+export async function getServerSideProps(context) {
+  const data = await fetchData()
+  return { props: { data } }
 }
 ```
 
-**Extracted Implementation Pattern**:
-- Named export for HTTP methods
-- URL search params extraction
-- Pagination with skip/take
-- Selective field returns with select
-- Consistent error response format
-- Try/catch error handling
+**Identified Gaps**:
+- Using Pages Router when App Router available
+- Server-side rendering pattern evolution
+- Type safety improvements available
+- Performance optimizations in App Router
+
+### Tailwind Configuration Gap
+```javascript
+// Discovered: Tailwind 2.x config pattern
+module.exports = {
+  mode: 'jit', // Deprecated in 3.x
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'], // Changed to 'content'
+  darkMode: 'media', // Can be improved with 'class'
+}
+```
+
+**Identified Gaps**:
+- Deprecated configuration options
+- Missing modern features (container queries)
+- Performance improvements available
+- New plugin ecosystem
 
 ## Analysis Quality Standards
 
-### Pattern Completeness
-- [ ] Include complete implementation (not just snippets)
-- [ ] Show file structure and organization
-- [ ] Include all necessary imports and dependencies
-- [ ] Document integration points with other patterns
+### Gap Identification Accuracy
+- [ ] Focus on actual version/pattern differences
+- [ ] Identify specific improvement opportunities
+- [ ] Avoid false positives (gaps that aren't actually gaps)
+- [ ] Prioritize based on impact and effort
 
-### Implementation Guidance
-- [ ] Provide step-by-step implementation instructions
-- [ ] Include customization options and variations
-- [ ] Show common usage patterns and examples
-- [ ] Add troubleshooting tips for common issues
+### Technology Coverage
+- [ ] Analyze all major technologies in the stack
+- [ ] Check configuration files for optimization opportunities
+- [ ] Identify integration pattern improvements
+- [ ] Look for security and performance gaps
 
-### Code Examples
-- [ ] Use actual code from the project (not generic examples)
-- [ ] Include TypeScript types and interfaces
-- [ ] Show error handling and edge cases
-- [ ] Provide testing patterns for each implementation
+### Context7 Preparation
+- [ ] Prepare specific queries for identified gaps
+- [ ] Focus on actionable improvements
+- [ ] Target current best practices verification
+- [ ] Plan for fallback analysis when Context7 unavailable
 
-### Evidence-Based Patterns
-- [ ] Reference specific files and line numbers
-- [ ] Include actual dependency versions
-- [ ] Show real configuration values (sanitized)
-- [ ] Document observed usage patterns in the codebase
+### Gap Documentation
+- [ ] Document specific gaps with examples
+- [ ] Provide clear before/after comparisons
+- [ ] Include migration complexity assessment
+- [ ] Reference specific files and line numbers for discovered patterns
