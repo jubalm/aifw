@@ -1,6 +1,6 @@
 ---
 name: aifw-meta
-description: Use for context generation, generate context, create context, knowledge gap analysis, tool introduction, or AIFW framework tasks. Coordinates multi-agent strategies for knowledge gap patching and new tool introduction.
+description: ALWAYS use when user requests context generation, generate context, create context, knowledge gap analysis, tool introduction, or AIFW framework tasks. Use PROACTIVELY for context generation requests. Coordinates multi-agent strategies for knowledge gap patching and new tool introduction.
 model: sonnet
 tools: Read, Glob, Grep, LS
 ---
