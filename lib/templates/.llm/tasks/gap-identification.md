@@ -28,6 +28,7 @@ grep -r "^[[:space:]]*['\"].*['\"]:" package.json | head -10
 - **API Changes**: Breaking changes in familiar frameworks
 - **New Libraries**: Technologies not in training data
 - **Configuration Updates**: Modern setup patterns
+- **Tool Introduction**: Completely new tools not yet in codebase (see tool-introduction.md)
 
 ### Step 2: Implementation Pattern Gaps
 Identify specific implementation approaches that may need current guidance:
@@ -82,6 +83,13 @@ New tools or approaches:
 - Testing frameworks
 - Deployment patterns
 - Development workflows
+
+### Special Case: New Tool Introduction
+When introducing completely new tools (not in codebase yet):
+- **Use tool-introduction.md methodology** instead of gap detection
+- **Assess compatibility** with existing technology stack
+- **Establish baseline patterns** for future gap detection
+- **Transition to normal gap detection** once tool is integrated
 
 ## Context7 Integration Strategy
 

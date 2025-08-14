@@ -14,10 +14,11 @@ This document provides the complete methodology for identifying and patching spe
 
 ### Gap Patching Process Overview
 1. **Technology Stack Discovery**: Identify technologies and versions in use
-2. **Pattern Analysis**: Extract actual implementation patterns from codebase
-3. **Gap Identification**: Compare discovered patterns with current best practices
-4. **Context7 Enhancement**: Query current documentation for identified gaps
-5. **Targeted Patch Generation**: Create minimal context updates for specific gaps
+2. **New Tool Assessment**: Check if completely new tools need introduction (see tool-introduction.md)
+3. **Pattern Analysis**: Extract actual implementation patterns from codebase
+4. **Gap Identification**: Compare discovered patterns with current best practices
+5. **Context7 Enhancement**: Query current documentation for identified gaps
+6. **Targeted Patch Generation**: Create minimal context updates for specific gaps
 
 ## Knowledge Gap Patching Workflow
 
@@ -196,16 +197,18 @@ Generate minimal, focused patches for identified gaps:
 ### For Agent Usage
 Agents should:
 1. Apply gap identification methodology from gap-identification.md
-2. Use Context7 integration patterns from context7-integration.md
-3. Follow quality standards throughout gap analysis
-4. Reference codebase analysis methodology for discovery techniques
+2. Use tool introduction methodology from tool-introduction.md when needed
+3. Use Context7 integration patterns from context7-integration.md
+4. Follow quality standards throughout gap analysis
+5. Reference codebase analysis methodology for discovery techniques
 
 ### For Direct LLM Usage
 Any LLM can:
 1. Follow this methodology sequentially for gap patching
-2. Apply dynamic approach without predefined templates
-3. Integrate Context7 when available, fallback gracefully when not
-4. Focus on minimal, targeted knowledge updates
+2. Use tool-introduction.md when introducing completely new tools
+3. Apply dynamic approach without predefined templates
+4. Integrate Context7 when available, fallback gracefully when not
+5. Focus on minimal, targeted knowledge updates
 
 ### Methodology Stability
 Regardless of technology evolution:

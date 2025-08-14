@@ -42,6 +42,11 @@ context7_query "TypeScript 5.x configuration changes"
 context7_query "Tailwind CSS 3.4 new utilities and patterns"
 context7_query "Prisma 5.x query patterns and performance"
 context7_query "Zustand vs Redux current recommendations"
+
+# New tool introduction queries
+context7_query "shadcn/ui setup with Next.js 14 and Tailwind CSS"
+context7_query "Framer Motion installation and React 18 compatibility"
+context7_query "Vitest migration from Jest best practices"
 ```
 
 #### Gap-Specific Queries
