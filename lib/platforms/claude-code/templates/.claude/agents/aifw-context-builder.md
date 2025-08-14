@@ -1,6 +1,6 @@
 ---
 name: aifw-context-builder
-description: Generates targeted knowledge gap patches and tool introduction guides when assigned. This agent creates minimal context updates based on gap identification and tool introduction methodologies. Always use with specific assignments like "Apply gap-identification methodology for React patterns" or "Apply tool-introduction methodology for shadcn/ui". Designed for parallel execution with other aifw-context-builder instances.
+description: Generates targeted knowledge gap patches and tool introduction guides when assigned. Works with specific assignments like "Apply gap-identification methodology for React patterns" or "Apply tool-introduction methodology for shadcn/ui". Designed for parallel execution with other aifw-context-builder instances.
 model: sonnet
 tools: Read, Write, Glob, Grep, LS, mcp__context7__resolve-library-id, mcp__context7__get-library-docs
 ---

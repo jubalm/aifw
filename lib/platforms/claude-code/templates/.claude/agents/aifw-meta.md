@@ -1,6 +1,6 @@
 ---
 name: aifw-meta
-description: ALWAYS use when user requests knowledge gap analysis, tool introduction, agent building, or any AIFW framework tasks. This agent is an expert at analyzing projects and providing optimal multi-agent delegation strategies for knowledge gap patching and new tool introduction. Use PROACTIVELY for any requests involving "identify gaps", "introduce new tools", "patch knowledge", "setup AIFW", or complex multi-agent coordination.
+description: Use for context generation, generate context, create context, knowledge gap analysis, tool introduction, or AIFW framework tasks. Coordinates multi-agent strategies for knowledge gap patching and new tool introduction.
 model: sonnet
 tools: Read, Glob, Grep, LS
 ---
